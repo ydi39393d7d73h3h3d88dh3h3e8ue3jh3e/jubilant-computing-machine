@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Basic Meta Tags -->
+    <title>Восстановление кожи салона автомобиля | LuxAutoSpa</title>
+    <meta name="description" content="Профессиональное восстановление кожи салона автомобиля. Убираем потертости, царапины, трещины. Восстанавливаем цвет и структуру кожи. Детейлинг центр в Москве.">
+    <meta name="keywords" content="детейлинг, помыть машину, помыть, машина, автомобиль, восстановление кожи, реставрация кожи салона, перетяжка руля, химчистка салона">
+    <meta name="author" content="LuxAutoSpa">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://luxautospa.ru/articles/restoration-leather-interior">
+    <meta property="og:title" content="Восстановление кожи салона автомобиля">
+    <meta property="og:description" content="Профессиональное восстановление кожи салона. Возвращаем первозданный вид кожаным поверхностям.">
+    <meta property="og:image" content="https://avatars.mds.yandex.net/get-altay/15251163/2a0000019782d683c39a7c24bec3cdf294da/XXXL">
+    
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "LuxAutoSpa",
+            "url": "https://luxautospa.ru",
+            "logo": "https://luxautospa.ru/assets/images/logo.png",
+            "description": "Премиальный детейлинг, автохимчистка, полировка и реставрация салона в Москве.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Каширское шоссе, 23-й километр, вл1с2",
+                "addressLocality": "посёлок Совхоза имени Ленина",
+                "addressRegion": "Москва",
+                "postalCode": "142715",
+                "addressCountry": "RU"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "55.588347",
+                "longitude": "37.744724"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday"
+                    ],
+                    "opens": "10:00",
+                    "closes": "20:00"
+                }
+            ],
+            "telephone": "+79636941515",
+            "email": "info@luxautospa.ru",
+            "priceRange": "₽₽₽",
+            "image": "https://avatars.mds.yandex.net/get-altay/15251163/2a0000019782d683c39a7c24bec3cdf294da/XXXL",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "187",
+                "bestRating": "5",
+                "worstRating": "1"
+            },
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+79636941515",
+                    "contactType": "Customer service",
+                    "availableLanguage": "Russian"
+                },
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+79636941515",
+                    "contactType": "WhatsApp",
+                    "contactOption": "TollFree",
+                    "url": "https://wa.me/79636941515"
+                }
+            ],
+            "sameAs": [
+                "https://yandex.ru/maps/-/CPu0nWmW",
+                "https://wa.me/79636941515",
+                "https://t.me/luxautospa",
+                "https://vk.com/luxautospa"
+            ],
+            "areaServed": {
+                "@type": "City",
+                "name": "Москва"
+            },
+            "hasMap": "https://yandex.ru/maps/-/CPu0nWmW",
+            "brand": {
+                "@type": "Brand",
+                "name": "LuxAutoSpa",
+                "slogan": "Премиальный детейлинг для вашего автомобиля"
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0b0b;
+            color: #e0e0e0;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .keywords {
+            display: none;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 0;
+            border-bottom: 1px solid #2a2a2a;
+            background: rgba(11, 11, 11, 0.95);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        @media (max-width: 768px) {
+            .yandex-premium-widget {
+                border-radius: 24px;
+            }
+
+            .header-info a span {
+                display: none !important;
+            }
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .logo a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #d4a13e;
+        }
+        
+        .header-info {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+        
+        .header-phone i {
+            color: #d4a13e;
+        }
+        
+        .header-phone:hover {
+            color: #d4a13e;
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        
+        .whatsapp-btn i {
+            font-size: 1.2rem;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #20b859;
+            transform: scale(1.02);
+        }
+
+        /* After Header Banner */
+        .after-header {
+            max-width: 1280px;
+            margin: 40px auto 0;
+            background: linear-gradient(135deg, #131313 0%, #1e1e1e 100%);
+            border-radius: 30px;
+            padding: 50px 60px;
+            color: #fff;
+            border: 1px solid #2a2a2a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .after-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 161, 62, 0.1));
+            pointer-events: none;
+        }
+
+        .after-header-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, #d4a13e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            max-width: 800px;
+        }
+
+        .after-header-text {
+            font-size: 1.2rem;
+            color: #aaa;
+            max-width: 600px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .after-header-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #d4a13e;
+            color: #0b0b0b;
+            padding: 16px 32px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            border: none;
+        }
+
+        .after-header-button:hover {
+            background: #e0b050;
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: #0b0b0b;
+        }
+
+        .after-header-button i {
+            font-size: 1.3rem;
+        }
+
+        /* Main Content */
+        main.app {
+            max-width: 1280px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        /* Breadcrumb */
+        .apr-breadcrumb {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 40px;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .apr-breadcrumb li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .apr-breadcrumb a {
+            color: #d4a13e;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .apr-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .apr-breadcrumb li::after {
+            content: "/";
+            margin-left: 10px;
+            color: #666;
+        }
+
+        .apr-breadcrumb li:last-child::after {
+            content: "";
+            margin: 0;
+        }
+
+        .apr-breadcrumb li:last-child a {
+            color: #888;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        /* Article */
+        article {
+            background: #131313;
+            border-radius: 30px;
+            padding: 50px;
+            border: 1px solid #2a2a2a;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #fff 0%, #d4a13e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 50px 0 25px;
+            color: #fff;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: #d4a13e;
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 30px 0 15px;
+            color: #d4a13e;
+        }
+
+        p {
+            margin-bottom: 1.5em;
+            color: #ccc;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            margin: 1.5em 0;
+            padding: 0 0 0 1.5em;
+            color: #ccc;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        li strong {
+            color: #d4a13e;
+        }
+
+        a {
+            color: #d4a13e;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Info Card */
+        .info-card {
+            background: #1a1a1a;
+            border-radius: 24px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 4px solid #d4a13e;
+            border: 1px solid #2a2a2a;
+            border-left-width: 4px;
+        }
+
+        .info-card h3 {
+            margin-top: 0;
+            color: #d4a13e;
+        }
+
+        .info-card p {
+            margin-bottom: 0;
+        }
+
+        /* Before/After Grid */
+        .ba-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .ba-item {
+            background: #1a1a1a;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+            transition: 0.3s;
+        }
+
+        .ba-item:hover {
+            border-color: #d4a13e;
+            transform: translateY(-5px);
+        }
+
+        .ba-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .ba-label {
+            text-align: center;
+            padding: 15px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: #0f0f0f;
+            color: #fff;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .ba-label.do {
+            color: #ff6b6b;
+        }
+
+        .ba-label.posle {
+            color: #6bff6b;
+        }
+
+        /* Price Table */
+        .price-table {
+            background: #1a1a1a;
+            border-radius: 24px;
+            overflow: hidden;
+            margin: 40px 0;
+            border: 1px solid #2a2a2a;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            border-bottom: 1px solid #2a2a2a;
+            transition: 0.2s;
+        }
+
+        .price-row:hover {
+            background: #1e1e1e;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-row .service {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .price-row .price {
+            color: #d4a13e;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        /* Blockquote */
+        blockquote {
+            background: #1a1a1a;
+            border-radius: 24px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 1px solid #2a2a2a;
+            position: relative;
+            font-style: italic;
+        }
+
+        blockquote::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: #d4a13e;
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        blockquote p {
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        blockquote footer {
+            color: #d4a13e;
+            font-weight: 600;
+            background: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #d4a13e;
+            color: #0b0b0b;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            margin: 30px 0 20px;
+            transition: 0.3s;
+            border: none;
+            width: 100%;
+        }
+
+        .cta-button:hover {
+            background: #e0b050;
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: #0b0b0b;
+        }
+
+        .cta-button i {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f0f;
+            text-align: center;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-top: 1px solid #2a2a2a;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        footer a:hover {
+            color: #d4a13e;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .after-header {
+                padding: 30px 20px;
+                margin: 20px 20px 0;
+            }
+
+            .after-header-title {
+                font-size: 2rem;
+            }
+
+            .after-header-text {
+                font-size: 1rem;
+            }
+
+            article {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            p, li {
+                font-size: 1rem;
+            }
+
+            .ba-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .price-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .price-row .price {
+                font-size: 1.3rem;
+            }
+
+            .header .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="/">LUX<span>AUTO</span>SPA</a>
+            </div>
+            <div class="header-info">
+                <a href="tel:+79636941515" class="header-phone"><i class="fas fa-phone-alt"></i> +7 (963) 694-15-15</a>
+                <a href="https://wa.me/79636941515?text=Здравствуйте!%20Интересует%20услуга%20детейлинга" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> <span>Написать в WhatsApp</span></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="after-header">
+        <div class="after-header-title">
+            Восстановление кожи салона
+        </div>
+        <div class="after-header-text">
+            Вернем первозданный вид кожаным поверхностям: убираем потертости, царапины и трещины. Восстанавливаем цвет и структуру кожи.
+        </div>
+        <a href="https://wa.me/79636941515?text=Здравствуйте!%20Интересует%20восстановление%20кожи%20салона" class="after-header-button">
+            <i class="fab fa-whatsapp"></i> Заказать восстановление
+        </a>
+    </div>
+
+    <main class="app">
+        <nav>
+            <ol class="apr-breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="/" title="Главная" itemprop="item">
+                        <span itemprop="name">Главная</span>
+                        <meta itemprop="position" content="1">
+                    </a>
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="/#service" title="Услуги" itemprop="item">
+                        <span itemprop="name">Услуги</span>
+                        <meta itemprop="position" content="2">
+                    </a>
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name">Восстановление кожи салона</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </nav>
+
+        <article>
+            <h1>Восстановление кожи салона автомобиля</h1>
+            
+            <p>Кожаный салон — это визитная карточка премиального <strong>автомобиля</strong>. Но даже самая качественная кожа со временем теряет свой первозданный вид: появляются потертости, царапины, трещины, вытирается краска. Многие считают, что единственный выход — полная перетяжка салона за десятки тысяч рублей. Но есть более бюджетное и эффективное решение — профессиональное <strong>восстановление кожи</strong>.</p>
+
+            <div class="info-card">
+                <h3>Важно знать</h3>
+                <p>Восстановление кожи салона — это не просто косметическая процедура, а комплексный процесс, который включает очистку, обезжиривание, восстановление структуры, покраску и нанесение защиты. В 95% случаев это позволяет вернуть коже первозданный вид без замены обивки.</p>
+            </div>
+
+            <h2>Когда нужно восстанавливать кожу?</h2>
+            <p>Регулярное использование <strong>автомобиля</strong> неизбежно приводит к износу кожаных поверхностей. Основные признаки того, что салону требуется профессиональное восстановление:</p>
+            
+            <ul>
+                <li><strong>Потертости на руле и сиденьях</strong> — самые уязвимые места, которые постоянно контактируют с руками и одеждой</li>
+                <li><strong>Трещины на коже</strong> — появляются из-за перепадов температур и недостаточного ухода</li>
+                <li><strong>Выцветание краски</strong> — под воздействием ультрафиолета кожа теряет насыщенность цвета</li>
+                <li><strong>Засветы и потемневшие участки</strong> — результат загрязнений, въевшихся в структуру кожи</li>
+                <li><strong>Царапины от ключей, пряжек ремней, когтей животных</strong> — механические повреждения</li>
+            </ul>
+
+            <div class="ba-grid">
+                <div class="ba-item">
+                    <img class="ba-image" src="https://avatars.mds.yandex.net/get-altay/16866637/2a000001977a2b5141f9f2830ddd66334681/XXXL" alt="После реставрации" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/d4a13e?text=ПОСЛЕ'">
+                    <div class="ba-label do">ДО</div>
+                </div>
+                <div class="ba-item">
+                    <img class="ba-image" src="https://avatars.mds.yandex.net/get-altay/15993332/2a000001977a315516f6ad19e1755b591a6a/XXXL" alt="До реставрации" onerror="this.src='https://via.placeholder.com/600x400/2a2a2a/d4a13e?text=ДО'">
+                    <div class="ba-label posle">ПОСЛЕ</div>
+                </div>
+            </div>
+
+            <h2>Процесс восстановления кожи</h2>
+            <p>В LuxAutoSpa мы используем профессиональные материалы и технологии, которые гарантируют идеальный результат:</p>
+
+            <h3>1. Глубокая очистка</h3>
+            <p>Первый и важнейший этап. Специальными составами удаляются все загрязнения, жиры и силиконы, накопившиеся в порах кожи. Без качественной очистки дальнейшие этапы будут бесполезны.</p>
+
+            <h3>2. Восстановление структуры</h3>
+            <p>Если на коже есть глубокие трещины или потертости, мы используем жидкие реставраторы, которые заполняют повреждения и восстанавливают целостность поверхности.</p>
+
+            <h3>3. Покраска</h3>
+            <p>С помощью профессиональных красителей на водной основе мы восстанавливаем цвет кожи. Краска подбирается индивидуально под ваш <strong>автомобиль</strong>.</p>
+
+            <h3>4. Защитное покрытие</h3>
+            <p>Финальный этап — нанесение защиты, которая предотвращает выцветание, отталкивает грязь и продлевает срок службы покрытия.</p>
+
+            <h2>Стоимость восстановления</h2>
+
+            <div class="price-table">
+                <div class="price-row">
+                    <span class="service">Восстановление руля</span>
+                    <span class="price">от 6 000 ₽</span>
+                </div>
+                <div class="price-row">
+                    <span class="service">Восстановление водительского сиденья</span>
+                    <span class="price">от 8 000 ₽</span>
+                </div>
+                <div class="price-row">
+                    <span class="service">Восстановление заднего дивана</span>
+                    <span class="price">от 12 000 ₽</span>
+                </div>
+                <div class="price-row">
+                    <span class="service">Комплексное восстановление всего салона</span>
+                    <span class="price">от 35 000 ₽</span>
+                </div>
+            </div>
+
+            <h2>Почему выбирают нас</h2>
+            
+            <blockquote>
+                <p>Оставлял машину на химчистку светлого салона и перешив подушки водителя. Подушку перешили очень аккуратно, подобрали цвет и строчку, очень оперативно и по очень хорошей цене! Салон почистили просто шикарно.</p>
+                <footer>— Дмитрий, отзыв с Яндекс.Карт</footer>
+            </blockquote>
+
+            <p>В LuxAutoSpa работают мастера с многолетним опытом, мы используем профессиональные материалы, которые не уступают по качеству заводским. Мы даем гарантию на все виды работ.</p>
+
+            <h2>Уход за восстановленной кожей</h2>
+            <p>Чтобы результат радовал вас долгие годы, соблюдайте простые правила:</p>
+
+            <ul>
+                <li><strong>Регулярно очищайте</strong> — протирайте кожу влажной микрофиброй</li>
+                <li><strong>Используйте защитные кремы</strong> — раз в 3 месяца наносите кондиционер для кожи</li>
+                <li><strong>Избегайте солнца</strong> — паркуйтесь в тени или используйте экраны</li>
+                <li><strong>Не используйте агрессивную химию</strong> — никаких растворителей и абразивов</li>
+            </ul>
+
+            <p>Если вы хотите просто <strong>помыть машину</strong> или нуждаетесь в комплексном <strong>детейлинге</strong> — обращайтесь. Мы знаем, как вернуть вашему <strong>автомобилю</strong> идеальный вид.</p>
+
+            <a href="https://wa.me/79636941515?text=Здравствуйте!%20Интересует%20восстановление%20кожи%20салона" class="cta-button">
+                <i class="fab fa-whatsapp"></i> Записаться на восстановление кожи
+            </a>
+
+            <p>LuxAutoSpa — премиальный детейлинг-центр в Москве. Адрес: Каширское шоссе, 23-й километр, вл1с2, посёлок Совхоза имени Ленина. Работаем ежедневно с 10:00 до 20:00.</p>
+        </article>
+    </main>
+
+    <p class="keywords">детейлинг, помыть машину, помыть, машина, автомобиль, восстановление кожи, реставрация кожи салона, перетяжка руля, химчистка салона, детейлинг центр москва</p>
+
+    <footer>
+        <a href="/privacy-policy/">Политика конфиденциальности</a>
+        <a href="/user-agreement/">Пользовательское соглашение</a>
+    </footer>
+</body>
+</html>
