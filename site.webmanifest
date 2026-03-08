@@ -1,7 +1,7 @@
 {
-  "name": "Your Application Name",
-  "short_name": "App",
-  "description": "Application description",
+  "name": "Lux Auto Spa",
+  "short_name": "LuxAutoSpa",
+  "description": "Lux Auto Spa DETAILING",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -28,8 +28,10 @@
     }
   ],
   "categories": [
-    "productivity"
+    "productivity",
+    "games",
+    "car"
   ],
-  "lang": "en",
+  "lang": "ru",
   "dir": "ltr"
 }
