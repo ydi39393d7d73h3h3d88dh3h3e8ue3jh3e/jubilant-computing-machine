@@ -1,0 +1,126 @@
+# robots.txt для LuxAutoSpa
+# https://luxautospa.ru
+
+User-agent: *
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /assets/
+Disallow: /*.php$
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.log$
+Disallow: /*.txt$
+Disallow: /?*
+Disallow: /search
+Disallow: /page/*
+Disallow: /tag/*
+Disallow: /author/*
+Disallow: /*?utm_*
+Disallow: /*?ref_*
+Disallow: /*?source=*
+
+# Разрешаем индексацию основных разделов
+Allow: /$
+Allow: /#about
+Allow: /#service
+Allow: /#contacts
+Allow: /articles/
+Allow: /articles/*.html$
+Allow: /articles/restoration-leather-interior/
+Allow: /uslugi/
+Allow: /gallery/
+Allow: /reviews/
+
+# Host
+Host: https://luxautospa.ru
+
+# Sitemap
+Sitemap: https://luxautospa.ru/sitemap.xml
+
+# Crawl-delay для бережного сканирования
+Crawl-delay: 2
+
+# User-agent: Яндекс
+User-agent: Yandex
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /assets/
+Disallow: /*?utm_*
+Disallow: /*?ref_*
+Allow: /$
+Allow: /#about
+Allow: /#service
+Allow: /#contacts
+Allow: /articles/
+Allow: /articles/*.html$
+Allow: /articles/restoration-leather-interior/
+Allow: /uslugi/
+Allow: /gallery/
+Allow: /reviews/
+
+# Ограничение для Яндекса
+Host: https://luxautospa.ru
+Sitemap: https://luxautospa.ru/sitemap.xml
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
+Crawl-delay: 1.5
+
+# User-agent: Googlebot
+User-agent: Googlebot
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /assets/
+Disallow: /*?utm_*
+Allow: /$
+Allow: /articles/
+Allow: /uslugi/
+Allow: /gallery/
+Allow: /reviews/
+Crawl-delay: 1
+
+# User-agent: Googlebot-Image
+User-agent: Googlebot-Image
+Allow: /assets/images/gallery/
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Disallow: /admin/
+Disallow: /private/
+
+# User-agent: YandexImages
+User-agent: YandexImages
+Allow: /assets/images/gallery/
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+
+# User-agent: Mediapartners-Google (Google AdSense)
+User-agent: Mediapartners-Google
+Allow: /
+
+# User-agent: AdsBot-Google
+User-agent: AdsBot-Google
+Allow: /
+
+# Блокировка плохих ботов
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: Mail.RU
+Disallow: /

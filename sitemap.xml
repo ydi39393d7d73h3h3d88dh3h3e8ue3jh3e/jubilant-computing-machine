@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://luxautospa.ru/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+
+    <!-- Главная страница -->
+    <url>
+        <loc>https://luxautospa.ru/</loc>
+        <lastmod>2026-03-08T10:30:00+03:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/logo.png</image:loc>
+            <image:title>LuxAutoSpa - Премиальный детейлинг</image:title>
+            <image:caption>Премиальный детейлинг центр в Москве</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Основные разделы (якоря) - указываем как отдельные URL для SEO -->
+    <url>
+        <loc>https://luxautospa.ru/#about</loc>
+        <lastmod>2026-03-08T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://luxautospa.ru/#service</loc>
+        <lastmod>2026-03-08T10:30:00+03:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://luxautospa.ru/#contacts</loc>
+        <lastmod>2026-03-08T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Страницы услуг -->
+    <url>
+        <loc>https://luxautospa.ru/services/polishing/</loc>
+        <lastmod>2026-03-01T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-sprav-products/2893106/2a00000190cea75ec9448d9c325a2aa48611/XXXL</image:loc>
+            <image:title>Полировка кузова автомобиля</image:title>
+            <image:caption>Профессиональная полировка кузова</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/services/chemdry/</loc>
+        <lastmod>2026-03-05T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-sprav-products/2791887/2a00000191fed7ae8c8bae9808cf3bf50d87/XXXL</image:loc>
+            <image:title>Химчистка салона автомобиля</image:title>
+            <image:caption>Глубокая химчистка салона</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/services/painting/</loc>
+        <lastmod>2026-02-28T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-sprav-products/10324913/2a0000018fc3c48d831213bc900b1f697ee7/XXXL</image:loc>
+            <image:title>Покраска автомобиля</image:title>
+            <image:caption>Профессиональная покраска автомобиля</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/services/glass-polishing/</loc>
+        <lastmod>2026-03-03T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/services/ceramic-coating/</loc>
+        <lastmod>2026-03-02T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/services/restoration/</loc>
+        <lastmod>2026-03-07T10:30:00+03:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-altay/15251163/2a0000019782d683c39a7c24bec3cdf294da/XXXL</image:loc>
+            <image:title>Реставрация салона автомобиля</image:title>
+            <image:caption>Реставрация кожи салона</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/services/wheel-painting/</loc>
+        <lastmod>2026-03-04T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Статьи -->
+    <url>
+        <loc>https://luxautospa.ru/articles/</loc>
+        <lastmod>2026-03-08T10:30:00+03:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/restoration-leather-interior/</loc>
+        <lastmod>2026-03-08T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-altay/15251163/2a0000019782d683c39a7c24bec3cdf294da/XXXL</image:loc>
+            <image:title>Восстановление кожи салона</image:title>
+            <image:caption>Статья о восстановлении кожи салона автомобиля</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-altay/15993332/2a000001977a315516f6ad19e1755b591a6a/XXXL</image:loc>
+            <image:title>Пример реставрации кожи - до</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-altay/16866637/2a000001977a2b5141f9f2830ddd66334681/XXXL</image:loc>
+            <image:title>Пример реставрации кожи - после</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/polishing-tips/</loc>
+        <lastmod>2026-02-20T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/ceramic-coating-benefits/</loc>
+        <lastmod>2026-02-15T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Галерея -->
+    <url>
+        <loc>https://luxautospa.ru/gallery/</loc>
+        <lastmod>2026-03-08T10:30:00+03:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/gallery/polishing/</loc>
+        <lastmod>2026-03-01T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-sprav-products/2893106/2a00000190cea75ec9448d9c325a2aa48611/XXXL</image:loc>
+            <image:title>Полировка кузова</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/gallery/chemdry/</loc>
+        <lastmod>2026-03-05T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-sprav-products/2791887/2a00000191fed7ae8c8bae9808cf3bf50d87/XXXL</image:loc>
+            <image:title>Химчистка салона</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-sprav-products/10253960/2a0000018fc3c32c0ec95d68c5dde2212231/XXXL</image:loc>
+            <image:title>Химчистка салона пример</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/gallery/restoration/</loc>
+        <lastmod>2026-03-07T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-altay/15251163/2a0000019782d683c39a7c24bec3cdf294da/XXXL</image:loc>
+            <image:title>Реставрация салона</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-altay/15993332/2a000001977a315516f6ad19e1755b591a6a/XXXL</image:loc>
+            <image:title>Реставрация кожи до</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-altay/16866637/2a000001977a2b5141f9f2830ddd66334681/XXXL</image:loc>
+            <image:title>Реставрация кожи после</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatars.mds.yandex.net/get-altay/16451045/2a000001973c2cb4f02f984a465c234ae497/XXXL</image:loc>
+            <image:title>Перешивка руля</image:title>
+        </image:image>
+    </url>
+
+    <!-- Отзывы -->
+    <url>
+        <loc>https://luxautospa.ru/reviews/</loc>
+        <lastmod>2026-03-08T10:30:00+03:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Контакты -->
+    <url>
+        <loc>https://luxautospa.ru/contacts/</loc>
+        <lastmod>2026-03-08T10:30:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Политика конфиденциальности -->
+    <url>
+        <loc>https://luxautospa.ru/privacy-policy/</loc>
+        <lastmod>2026-01-01T10:30:00+03:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Пользовательское соглашение -->
+    <url>
+        <loc>https://luxautospa.ru/user-agreement/</loc>
+        <lastmod>2026-01-01T10:30:00+03:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>
