@@ -51,7 +51,7 @@
                 }
             ]
         }
-        </script>
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -205,6 +205,7 @@
             transform: scale(1.02);
         }
 
+        /* Hero секция */
         .hero {
             padding: 60px 0 40px;
         }
@@ -387,6 +388,118 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        /* Новая секция "О нас" */
+        .about-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 161, 62, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            margin-bottom: 30px;
+        }
+
+        .about-content p {
+            color: #ccc;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #1a1a1a;
+            padding: 15px 20px;
+            border-radius: 15px;
+            border: 1px solid #2a2a2a;
+            transition: 0.3s;
+        }
+
+        .feature-item:hover {
+            border-color: #d4a13e;
+            transform: translateX(5px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 161, 62, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #d4a13e;
+        }
+
+        .feature-text {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .feature-text small {
+            display: block;
+            font-size: 0.8rem;
+            color: #999;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .about-image {
+            background: #1a1a1a;
+            border-radius: 30px;
+            padding: 20px;
+            border: 1px solid #2a2a2a;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #d4a13e 0%, transparent 70%);
+            opacity: 0.2;
+            z-index: -1;
         }
 
         .services {
@@ -922,6 +1035,8 @@
             .reviews-grid { grid-template-columns: 1fr; }
             .before-after-grid { grid-template-columns: 1fr; }
             .header .container { flex-direction: column; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-features { grid-template-columns: 1fr; }
         }
 
         .link {
@@ -936,6 +1051,197 @@
 
         .link:hover {
             color: #e0b050;
+        }
+
+        /* FAB (Floating Action Button) */
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+        }
+
+        .fab-call {
+            width: 60px;
+            height: 60px;
+            background: #d4a13e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0b0b0b;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(212, 161, 62, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+        }
+
+        .fab-call:hover {
+            transform: scale(1.1);
+            background: #e0b050;
+        }
+
+        .fab-main {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #d4a13e, #b48a2f);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0b0b0b;
+            font-size: 2.2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(212, 161, 62, 0.5);
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .fab-main:hover {
+            transform: scale(1.1);
+        }
+
+        .fab-options {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .fab-container.open .fab-options {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .fab-option {
+            width: 200px;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 50px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .fab-option:hover {
+            border-color: #d4a13e;
+            transform: translateX(-10px);
+            background: #1e1e1e;
+        }
+
+        .fab-option.whatsapp:hover {
+            border-color: #25D366;
+        }
+
+        .fab-option.telegram:hover {
+            border-color: #0088cc;
+        }
+
+        .fab-option i {
+            font-size: 1.5rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .fab-option.whatsapp i {
+            color: #25D366;
+        }
+
+        .fab-option.telegram i {
+            color: #0088cc;
+        }
+
+        .fab-option span {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .fab-option .arrow {
+            color: #666;
+            font-size: 0.9rem;
+            transition: transform 0.3s;
+        }
+
+        .fab-option:hover .arrow {
+            transform: translateX(5px);
+            color: #d4a13e;
+        }
+
+        /* Анимация пульсации для FAB */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 161, 62, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(212, 161, 62, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 161, 62, 0);
+            }
+        }
+
+        .fab-main {
+            animation: pulse 2s infinite;
+        }
+
+        @media (max-width: 768px) {
+            .fab-container {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .fab-call {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .fab-main {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+            
+            .fab-option {
+                width: 180px;
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Активная ссылка в футере */
+        .footer a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s;
+            margin: 0 10px;
+        }
+        
+        .footer a:hover {
+            color: #d4a13e;
         }
     </style>
     
@@ -976,7 +1282,8 @@
         },
         "sameAs": [
             "https://yandex.ru/maps/-/CPu0nWmW",
-            "https://wa.me/79636941515"
+            "https://wa.me/79636941515",
+            "https://t.me/luxautospa"
         ]
     }
     </script>
@@ -986,7 +1293,7 @@
         <div class="container">
             <div class="logo">LUX<span>AUTO</span>SPA</div>
             <div class="header-info">
-                <a href="tel:+79636941515" class="header-phone"><i class="fas fa-phone-alt"></i> +7 (963) 694-15-15</a>
+                <a href="tel:+79636941515" class="header-phone"><i class="fas fa-phone-alt"></i> <span>+7 (963) 694-15-15</span></a>
                 <a href="https://wa.me/79636941515?text=Здравствуйте!%20Интересует%20услуга%20детейлинга" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> <span>Написать в WhatsApp</span></a>
             </div>
         </div>
@@ -1028,6 +1335,53 @@
                         <div class="thumbnail" data-index="1"><img src="/assets/images/gallery/2.png" onerror="this.src='https://via.placeholder.com/100x100/1e1e1e/d4a13e?text=2'"></div>
                         <div class="thumbnail" data-index="2"><img src="/assets/images/gallery/3.png" onerror="this.src='https://via.placeholder.com/100x100/1e1e1e/d4a13e?text=3'"></div>
                         <div class="thumbnail" data-index="3"><img src="/assets/images/gallery/4.png" onerror="this.src='https://via.placeholder.com/100x100/1e1e1e/d4a13e?text=4'"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Новая секция "О нас" -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h2>О нас</h2>
+                        <p>LuxAutoSpa — это премиальный детейлинг-центр, специализирующийся на профессиональном уходе за автомобилями. Мы работаем с 2015 года и за это время помогли более 500 клиентам вернуть своим автомобилям идеальный внешний вид.</p>
+                        <p>Наша философия — индивидуальный подход к каждому автомобилю. Мы используем только профессиональные материалы и современное оборудование, чтобы достичь наилучшего результата. Каждый этап работы выполняется вручную мастерами с многолетним опытом.</p>
+                        
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-medal"></i></div>
+                                <div class="feature-text">
+                                    Гарантия качества
+                                    <small>на все виды работ</small>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                                <div class="feature-text">
+                                    Работаем 7 дней в неделю
+                                    <small>с 10:00 до 20:00</small>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-tools"></i></div>
+                                <div class="feature-text">
+                                    Профессиональное оборудование
+                                    <small>Koch Chemie, Rupes, 3M</small>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-star"></i></div>
+                                <div class="feature-text">
+                                    4.9 на Яндекс Картах
+                                    <small>187 отзывов</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="/assets/images/logo.png" alt="Наша команда" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/d4a13e?text=LuxAutoSpa'">
                     </div>
                 </div>
             </div>
@@ -1079,7 +1433,7 @@
             </div>
         </section>
 
-        <!-- Галерея работ (только с тегом "Услуги") -->
+        <!-- Галерея работ -->
         <section class="gallery-section">
             <div class="container">
                 <h2>Примеры работ</h2>
@@ -1153,6 +1507,7 @@
                     <div style="margin-top: 30px; display: flex; gap: 16px; flex-wrap: wrap;">
                         <a href="https://yandex.ru/maps/-/CPu0nWmW" target="_blank" style="background:#2a2a2a; padding:12px 24px; border-radius:40px; color:#d4a13e; text-decoration:none; display:inline-flex; align-items:center; gap:8px;"><i class="fab fa-yandex"></i> Яндекс Карты</a>
                         <a href="https://wa.me/79636941515" target="_blank" style="background:#25D366; padding:12px 24px; border-radius:40px; color:#fff; text-decoration:none; display:inline-flex; align-items:center; gap:8px;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://t.me/luxautospa" target="_blank" style="background:#0088cc; padding:12px 24px; border-radius:40px; color:#fff; text-decoration:none; display:inline-flex; align-items:center; gap:8px;"><i class="fab fa-telegram"></i> Telegram</a>
                     </div>
                 </div>
                 <div class="map-container">
@@ -1170,7 +1525,7 @@
                         <div class="form-group">
                             <input type="text" class="form-input" placeholder="Ваше имя" required>
                             <input type="tel" class="form-input" placeholder="Телефон" required>
-                            <button type="submit" class="form-btn"><i class="fab fa-whatsapp"></i> Отправить</button>
+                            <button type="submit" class="form-btn" id="fabFormBtn"><i class="fab fa-whatsapp"></i> Отправить</button>
                         </div>
                     </form>
                 </div>
@@ -1181,11 +1536,35 @@
     <footer class="footer">
         <div class="container">
             <p>© 2025 LuxAutoSpa — детейлинг и автохимчистка. Все права защищены.</p>
+            <div style="margin-top: 15px;">
+                <a href="/articles/restoration-leather-interior" class="link">Восстановление кожи салона</a>
+                <a href="/privacy-policy/" class="link">Политика конфиденциальности</a>
+                <a href="/user-agreement/" class="link">Пользовательское соглашение</a>
+            </div>
         </div>
-        <a href="/articles/restoration-leather-interior" class="link">Восстановление кожи салона автомобиля</a>
-        <a href="/privacy-policy/" class="link">Политика конфиденциальности</a>
-        <a href="/user-agreement/" class="link">Пользовательское соглашение</a>
     </footer>
+
+    <!-- FAB (Floating Action Button) -->
+    <div class="fab-container" id="fabContainer">
+        <a href="tel:+79636941515" class="fab-call" title="Позвонить">
+            <i class="fas fa-phone"></i>
+        </a>
+        <div class="fab-options">
+            <a href="https://wa.me/79636941515?text=Здравствуйте!%20Интересует%20услуга%20детейлинга" target="_blank" class="fab-option whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+                <i class="fas fa-arrow-right arrow"></i>
+            </a>
+            <a href="https://t.me/luxautospa" target="_blank" class="fab-option telegram">
+                <i class="fab fa-telegram"></i>
+                <span>Telegram</span>
+                <i class="fas fa-arrow-right arrow"></i>
+            </a>
+        </div>
+        <div class="fab-main" id="fabMain">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+    </div>
 
     <div class="lightbox" id="lightbox">
         <div class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></div>
@@ -1198,7 +1577,7 @@
     </div>
 
     <script>
-        // Реальные фотографии из API (только с тегом "Услуги")
+        // Реальные фотографии из API
         const servicesImages = [
             "https://avatars.mds.yandex.net/get-altay/15993332/2a000001977a315516f6ad19e1755b591a6a/XXXL",
             "https://avatars.mds.yandex.net/get-altay/15251163/2a0000019782d683c39a7c24bec3cdf294da/XXXL",
@@ -1280,7 +1659,7 @@
             });
         }
 
-        // Заполнение галереи работ (только фото с тегом "Услуги")
+        // Заполнение галереи работ
         function initGalleryGrid() {
             const grid = document.getElementById('galleryGrid');
             servicesImages.forEach((src, index) => {
@@ -1397,12 +1776,38 @@
             counter.textContent = `${currentImageIndex + 1} / ${currentGallery.length}`;
         }
 
+        // FAB Toggle
+        function initFAB() {
+            const fabMain = document.getElementById('fabMain');
+            const fabContainer = document.getElementById('fabContainer');
+            
+            fabMain.addEventListener('click', (e) => {
+                e.stopPropagation();
+                fabContainer.classList.toggle('open');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!fabContainer.contains(e.target)) {
+                    fabContainer.classList.remove('open');
+                }
+            });
+
+            // Предотвращаем закрытие при клике на опции
+            const options = document.querySelectorAll('.fab-option');
+            options.forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+            });
+        }
+
         // Инициализация
         document.addEventListener('DOMContentLoaded', () => {
             initHeroGallery();
             renderServices();
             initGalleryGrid();
             initBeforeAfterSliders();
+            initFAB();
 
             document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
             document.getElementById('lightboxPrev').addEventListener('click', () => navigateLightbox(-1));
