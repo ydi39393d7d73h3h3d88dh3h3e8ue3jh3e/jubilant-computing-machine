@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxAutoSpa — Агрессивная Анимация</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #050505;
+            font-family: 'Inter', sans-serif;
+        }
+        canvas {
+            display: block;
+        }
+        .ui-overlay {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .title {
+            color: white;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            opacity: 0.5;
+            margin-bottom: 10px;
+        }
+        .hint {
+            color: #d4af37;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ui-overlay">
+        <div class="title">LuxAutoSpa Interactive</div>
+        <div class="hint">Наведи на машину, чтобы включить фары</div>
+    </div>
+
+    <canvas id="carCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('carCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let mouse = { x: 0, y: 0, active: false };
+        
+        // Загрузка изображения автомобиля
+        const carImg = new Image();
+        carImg.src = 'https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=2070&auto=format&fit=crop'; 
+
+        // Координаты фар (относительные для этой картинки)
+        const lights = [
+            { x: 0.34, y: 0.61, size: 25 }, // Левая фара
+            { x: 0.64, y: 0.61, size: 25 }  // Правая фара
+        ];
+
+        let particles = [];
+        class SmokeParticle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = width * (0.3 + Math.random() * 0.4);
+                this.y = height * 0.8;
+                this.vx = (Math.random() - 0.5) * 1;
+                this.vy = -Math.random() * 2 - 0.5;
+                this.alpha = Math.random() * 0.5;
+                this.size = Math.random() * 40 + 20;
+                this.life = 0;
+                this.maxLife = Math.random() * 100 + 50;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.life++;
+                this.alpha -= 0.005;
+                if (this.alpha <= 0 || this.life >= this.maxLife) this.reset();
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.fillStyle = `rgba(150, 150, 150, ${this.alpha})`;
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            resize();
+            for(let i = 0; i < 30; i++) particles.push(new SmokeParticle());
+            animate();
+        }
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+            mouse.active = true;
+        });
+        window.addEventListener('mouseleave', () => mouse.active = false);
+
+        let tick = 0;
+
+        function animate() {
+            tick += 0.05;
+            ctx.clearRect(0, 0, width, height);
+
+            // 1. Отрисовка дыма сзади/снизу
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            // 2. Эффект покачивания кузова (idle animation)
+            const bounce = Math.sin(tick) * 3;
+            
+            // Рассчитываем размеры, чтобы картинка была "Cover"
+            const imgAspect = carImg.width / carImg.height;
+            const canvasAspect = width / height;
+            let drawW, drawH, offsetX, offsetY;
+
+            if (canvasAspect > imgAspect) {
+                drawW = width;
+                drawH = width / imgAspect;
+                offsetX = 0;
+                offsetY = (height - drawH) / 2;
+            } else {
+                drawH = height;
+                drawW = height * imgAspect;
+                offsetX = (width - drawW) / 2;
+                offsetY = 0;
+            }
+
+            // Рисуем машину
+            ctx.save();
+            ctx.translate(0, bounce);
+            ctx.drawImage(carImg, offsetX, offsetY, drawW, drawH);
+            
+            // 3. Фары
+            const lightIntensity = mouse.active ? 1 : 0.2 + Math.sin(tick * 2) * 0.1;
+            
+            lights.forEach(l => {
+                const lx = offsetX + drawW * l.x;
+                const ly = offsetY + drawH * l.y;
+                
+                // Основное свечение
+                const gradient = ctx.createRadialGradient(lx, ly, 0, lx, ly, l.size * 3);
+                gradient.addColorStop(0, `rgba(212, 175, 55, ${0.8 * lightIntensity})`);
+                gradient.addColorStop(0.5, `rgba(212, 175, 55, ${0.2 * lightIntensity})`);
+                gradient.addColorStop(1, 'rgba(212, 175, 55, 0)');
+                
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(lx, ly, l.size * 4, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Ядро фары
+                ctx.fillStyle = `rgba(255, 255, 255, ${lightIntensity})`;
+                ctx.beginPath();
+                ctx.arc(lx, ly, l.size / 2, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            // 4. Глянцевый блик (пробегающий по кузову)
+            if (mouse.active) {
+                const scanX = (tick * 200) % (width * 2);
+                ctx.beginPath();
+                const scanGrad = ctx.createLinearGradient(scanX - 200, 0, scanX, 0);
+                scanGrad.addColorStop(0, 'rgba(255,255,255,0)');
+                scanGrad.addColorStop(0.5, 'rgba(255,255,255,0.05)');
+                scanGrad.addColorStop(1, 'rgba(255,255,255,0)');
+                ctx.fillStyle = scanGrad;
+                ctx.fillRect(0, 0, width, height);
+            }
+
+            ctx.restore();
+
+            // Виньетка
+            const vignet = ctx.createRadialGradient(width/2, height/2, width/4, width/2, height/2, width);
+            vignet.addColorStop(0, 'rgba(0,0,0,0)');
+            vignet.addColorStop(1, 'rgba(0,0,0,0.8)');
+            ctx.fillStyle = vignet;
+            ctx.fillRect(0,0, width, height);
+
+            requestAnimationFrame(animate);
+        }
+
+        carImg.onload = init;
+    </script>
+</body>
+</html>
