@@ -45,7 +45,7 @@
     </url>
 
     <!-- Страницы услуг -->
-    <url>
+    <!-- <url>
         <loc>https://luxautospa.ru/services/polishing/</loc>
         <lastmod>2026-03-01T10:30:00+03:00</lastmod>
         <changefreq>monthly</changefreq>
@@ -86,7 +86,7 @@
         <lastmod>2026-03-03T10:30:00+03:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
-    </url>
+    </url> -->
 
     <url>
         <loc>https://luxautospa.ru/articles/steering-wheel-reupholstery/</loc>
@@ -95,7 +95,7 @@
         <priority>0.8</priority>
     </url>
 
-    <url>
+    <!-- <url>
         <loc>https://luxautospa.ru/services/restoration/</loc>
         <lastmod>2026-03-07T10:30:00+03:00</lastmod>
         <changefreq>weekly</changefreq>
@@ -112,15 +112,15 @@
         <lastmod>2026-03-04T10:30:00+03:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
-    </url>
+    </url> -->
 
     <!-- Статьи -->
-    <url>
+    <!-- <url>
         <loc>https://luxautospa.ru/articles/</loc>
         <lastmod>2026-03-08T10:30:00+03:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-    </url>
+    </url> -->
 
     <url>
         <loc>https://luxautospa.ru/articles/restoration-leather-interior/</loc>
@@ -150,13 +150,13 @@
     </url>
 
     <url>
-        <loc>https://luxautospa.ru/articles/ceramic-coating-benefits/</loc>
-        <lastmod>2026-02-15T10:30:00+03:00</lastmod>
+        <loc>https://luxautospa.ru/articles/ceiling-restoration/</loc>
+        <lastmod>2026-04-26T10:30:00+03:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
-    <!-- Галерея -->
+    <!-- Галерея
     <url>
         <loc>https://luxautospa.ru/gallery/</loc>
         <lastmod>2026-03-08T10:30:00+03:00</lastmod>
@@ -211,23 +211,23 @@
             <image:loc>https://avatars.mds.yandex.net/get-altay/16451045/2a000001973c2cb4f02f984a465c234ae497/XXXL</image:loc>
             <image:title>Перешивка руля</image:title>
         </image:image>
-    </url>
+    </url> -->
 
     <!-- Отзывы -->
-    <url>
+    <!-- <url>
         <loc>https://luxautospa.ru/reviews/</loc>
         <lastmod>2026-03-08T10:30:00+03:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
-    </url>
+    </url> -->
 
     <!-- Контакты -->
-    <url>
+    <!-- <url>
         <loc>https://luxautospa.ru/contacts/</loc>
         <lastmod>2026-03-08T10:30:00+03:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
-    </url>
+    </url>  -->
 
     <!-- Политика конфиденциальности -->
     <url>
