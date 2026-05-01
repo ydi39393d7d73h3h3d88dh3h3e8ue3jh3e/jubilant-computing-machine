@@ -1,4 +1,14 @@
 const API_BASE_URL = "/api";
+const METRIKA_COUNTER_ID = 107214723;
+const METRICS_CURRENCY = "RUB";
+const SERVICE_NAMES = {
+    polishing: "Полировка кузова",
+    chemdry: "Химчистка салона",
+    restoration: "Реставрация кожи",
+    ceramic: "Керамическое покрытие",
+    washing: "Перетяжка руля",
+    other: "Другая услуга",
+};
 
 function setButtonLoading(button, isLoading, defaultText) {
     if (!button) return;
@@ -22,6 +32,207 @@ async function sendJson(url, data) {
     }
 
     return payload;
+}
+
+function getDataLayer() {
+    window.dataLayer = window.dataLayer || [];
+    return window.dataLayer;
+}
+
+function getPageType() {
+    if (window.location.pathname.startsWith("/appointment")) {
+        return "appointment";
+    }
+
+    return "main";
+}
+
+function pushTrackingEvent(goal, params = {}) {
+    getDataLayer().push({
+        event: goal,
+        metrika: {
+            goal,
+            page: getPageType(),
+            ...params,
+        },
+    });
+}
+
+function trackGoal(goal, params = {}) {
+    pushTrackingEvent(goal, params);
+
+    if (typeof window.ym === "function") {
+        window.ym(METRIKA_COUNTER_ID, "reachGoal", goal, params);
+    }
+}
+
+function trackFormSubmission(formType, payload = {}) {
+    const product = {
+        id: payload.service ? `lead_${formType}_${payload.service}` : `lead_${formType}`,
+        name: payload.service ? `Заявка: ${SERVICE_NAMES[payload.service] || payload.service}` : "Заявка на обратный звонок",
+        category: "Lead Form",
+        brand: "LuxAutoSpa",
+        quantity: 1,
+    };
+
+    const variant = [payload.date, payload.time].filter(Boolean).join(" ");
+    if (variant) {
+        product.variant = variant;
+    }
+
+    getDataLayer().push({
+        ecommerce: {
+            currencyCode: METRICS_CURRENCY,
+            add: {
+                products: [product],
+            },
+        },
+    });
+}
+
+function trackServiceClickPurchase(serviceName) {
+    if (!serviceName) return;
+
+    getDataLayer().push({
+        ecommerce: {
+            currencyCode: METRICS_CURRENCY,
+            purchase: {
+                actionField: {
+                    id: `service-click-${Date.now()}`,
+                    revenue: 1,
+                },
+                products: [
+                    {
+                        id: `service_${serviceName.toLowerCase().replace(/\s+/g, "_")}`,
+                        name: serviceName,
+                        category: "Service Click",
+                        brand: "LuxAutoSpa",
+                        price: 1,
+                        quantity: 1,
+                        list: "Services",
+                    },
+                ],
+            },
+        },
+    });
+}
+
+function getTrackingSource(element) {
+    if (!element) return "unknown";
+    if (element.classList.contains("header-phone")) return "header_phone";
+    if (element.classList.contains("whatsapp-btn")) return "header_whatsapp";
+    if (element.classList.contains("fab-call")) return "fab_call";
+    if (element.classList.contains("service-order")) return "service_card";
+    if (element.closest(".fab-options")) return "fab_menu";
+    if (element.closest(".quick-actions")) return "quick_actions";
+    if (element.closest("#callbackForm")) return "callback_form";
+    if (element.closest("#appointmentForm")) return "appointment_form";
+    if (element.closest(".footer-links")) return "footer";
+    return "page";
+}
+
+function initGlobalClickTracking() {
+    document.addEventListener("click", (event) => {
+        const link = event.target.closest("a");
+        if (!link) return;
+
+        const href = link.getAttribute("href") || "";
+        const source = getTrackingSource(link);
+
+        if (href.startsWith("tel:")) {
+            trackGoal("contact_phone_click", { source, page: getPageType() });
+            return;
+        }
+
+        if (href.includes("wa.me")) {
+            const serviceName = link.closest(".service-card")?.querySelector("h3")?.textContent?.trim();
+            if (link.classList.contains("service-order") && serviceName) {
+                trackServiceClickPurchase(serviceName);
+            }
+            trackGoal("contact_whatsapp_click", {
+                source,
+                page: getPageType(),
+                ...(serviceName ? { service_name: serviceName } : {}),
+            });
+            return;
+        }
+
+        if (href.includes("t.me")) {
+            trackGoal("contact_telegram_click", { source, page: getPageType() });
+            return;
+        }
+
+        if (href.includes("yandex.ru/maps")) {
+            trackGoal("contact_map_click", { source, page: getPageType() });
+            return;
+        }
+
+        if (href.startsWith("#")) {
+            trackGoal("section_navigation_click", {
+                source,
+                page: getPageType(),
+                target_section: href.replace(/^#/, "") || "top",
+            });
+        }
+    });
+}
+
+function initAppointmentFieldTracking() {
+    const form = document.getElementById("appointmentForm");
+    if (!form) return;
+
+    let started = false;
+    form.addEventListener("focusin", () => {
+        if (started) return;
+        started = true;
+        trackGoal("appointment_form_start", { page: getPageType() });
+    });
+
+    const serviceField = form.querySelector("[name='service']");
+    serviceField?.addEventListener("change", () => {
+        const service = serviceField.value;
+        if (!service) return;
+
+        trackGoal("appointment_service_select", {
+            page: getPageType(),
+            service,
+            service_name: SERVICE_NAMES[service] || service,
+        });
+    });
+
+    const dateField = form.querySelector("[name='date']");
+    dateField?.addEventListener("change", () => {
+        if (!dateField.value) return;
+
+        trackGoal("appointment_date_select", {
+            page: getPageType(),
+            selected_date: dateField.value,
+        });
+    });
+
+    form.addEventListener("change", (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLSelectElement) || target.name !== "time" || !target.value) {
+            return;
+        }
+
+        trackGoal("appointment_time_select", {
+            page: getPageType(),
+            selected_time: target.value,
+        });
+    });
+}
+
+function initCallbackFieldTracking() {
+    const form = document.getElementById("callbackForm");
+    if (!form) return;
+
+    let started = false;
+    form.addEventListener("focusin", () => {
+        if (started) return;
+        started = true;
+        trackGoal("callback_form_start", { page: getPageType() });
+    });
 }
 
 function ensureTimeSelect() {
@@ -89,6 +300,7 @@ function initCallbackForm() {
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
+        event.stopImmediatePropagation();
 
         const [nameInput, phoneInput] = inputs;
         const data = {
@@ -99,14 +311,17 @@ function initCallbackForm() {
         try {
             setButtonLoading(button, true, "Отправить");
             await sendJson(`${API_BASE_URL}/callbacks`, data);
+            trackGoal("callback_form_submit", { page: getPageType() });
+            trackFormSubmission("callback");
             form.reset();
             alert("Заявка отправлена. Мы свяжемся с вами.");
         } catch (error) {
+            trackGoal("callback_form_error", { page: getPageType() });
             alert(error.message);
         } finally {
             setButtonLoading(button, false, "Отправить");
         }
-    });
+    }, true);
 }
 
 function initAppointmentForm() {
@@ -122,6 +337,7 @@ function initAppointmentForm() {
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
+        event.stopImmediatePropagation();
 
         const formData = new FormData(form);
         const data = {
@@ -137,12 +353,23 @@ function initAppointmentForm() {
         try {
             setButtonLoading(button, true, "Отправить заявку");
             await sendJson(`${API_BASE_URL}/appointments`, data);
+            trackGoal("appointment_form_submit", {
+                page: getPageType(),
+                service: data.service || "unknown",
+                ...(data.date ? { selected_date: data.date } : {}),
+                ...(data.time ? { selected_time: data.time } : {}),
+            });
+            trackFormSubmission("appointment", data);
             successMessage.style.display = "block";
             form.reset();
             if (timeSelect) {
                 timeSelect.innerHTML = `<option value="" selected disabled>Сначала выберите дату</option>`;
             }
         } catch (error) {
+            trackGoal("appointment_form_error", {
+                page: getPageType(),
+                service: data.service || "unknown",
+            });
             alert(error.message);
             if (dateInput?.value) {
                 await loadAvailableSlots(dateInput.value);
@@ -150,10 +377,13 @@ function initAppointmentForm() {
         } finally {
             setButtonLoading(button, false, "Отправить заявку");
         }
-    });
+    }, true);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    initGlobalClickTracking();
+    initCallbackFieldTracking();
     initCallbackForm();
+    initAppointmentFieldTracking();
     initAppointmentForm();
 });
