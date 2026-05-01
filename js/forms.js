@@ -131,6 +131,10 @@ function getTrackingSource(element) {
     return "page";
 }
 
+function getServiceNameFromLink(link) {
+    return link.closest(".service-item, .service-card")?.querySelector("h3")?.textContent?.trim() || null;
+}
+
 function initGlobalClickTracking() {
     document.addEventListener("click", (event) => {
         const link = event.target.closest("a");
@@ -145,7 +149,7 @@ function initGlobalClickTracking() {
         }
 
         if (href.includes("wa.me")) {
-            const serviceName = link.closest(".service-card")?.querySelector("h3")?.textContent?.trim();
+            const serviceName = getServiceNameFromLink(link);
             if (link.classList.contains("service-order") && serviceName) {
                 trackServiceClickPurchase(serviceName);
             }
