@@ -2,827 +2,1043 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    
-    <!-- Basic Meta Tags -->
-    <title>Записаться в LuxAutoSpa — премиальный детейлинг в Москве</title>
-    <meta name="description" content="Запишитесь на детейлинг, химчистку, полировку или восстановление кожи в LuxAutoSpa. Удобная форма записи, WhatsApp, Telegram и телефон. Премиальный уход за вашим автомобилем.">
-    <meta name="keywords" content="записаться детейлинг, запись на детейлинг, детейлинг москва, химчистка запись, полировка записаться, luxautospa запись">
-    <meta name="author" content="LuxAutoSpa">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись в LuxAutoSpa | Детейлинг в Москве</title>
+    <meta name="description" content="Запишитесь в LuxAutoSpa через удобную форму, WhatsApp, Telegram или по телефону. Выберите услугу, дату и удобное время.">
+    <meta name="theme-color" content="#101113">
     <meta property="og:type" content="website">
+    <meta property="og:title" content="Запись в LuxAutoSpa">
+    <meta property="og:description" content="Форма записи, WhatsApp, Telegram, звонок и маршрут до студии в одном месте.">
     <meta property="og:url" content="https://luxautospa.ru/appointment/">
-    <meta property="og:title" content="Записаться в LuxAutoSpa — премиальный детейлинг">
-    <meta property="og:description" content="Запишитесь на детейлинг, химчистку или полировку. Удобная форма, быстрая связь.">
-    <meta property="og:image" content="https://luxautospa.ru/assets/images/og-image.png">
-    <meta property="og:site_name" content="LuxAutoSpa">
-    <meta property="og:locale" content="ru_RU">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Записаться в LuxAutoSpa">
-    <meta name="twitter:description" content="Премиальный детейлинг в Москве. Запись онлайн.">
-    <meta name="twitter:image" content="https://luxautospa.ru/assets/images/og-image.png">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <meta name="theme-color" content="#0b0b0b">
-    
-    <!-- Fonts & Icons -->
+    <meta property="og:image" content="https://luxautospa.ru/assets/images/gallery/1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script>
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments);
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t);
+            a = e.getElementsByTagName(t)[0];
+            k.async = 1;
+            k.src = r;
+            a.parentNode.insertBefore(k, a);
+        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(107214723, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
+        });
+    </script>
     <style>
+        :root {
+            --bg: #101113;
+            --bg-soft: #17191d;
+            --card: rgba(18, 19, 22, 0.86);
+            --card-2: rgba(255, 255, 255, 0.035);
+            --line: rgba(255, 255, 255, 0.08);
+            --text: #f5f1e8;
+            --muted: #b8b0a2;
+            --gold: #d6a65f;
+            --gold-strong: #f1c27a;
+            --green: #20c36a;
+            --blue: #2a9fe8;
+            --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+            --radius-xl: 34px;
+            --radius-lg: 24px;
+            --radius-md: 18px;
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0b0b;
-            color: #e0e0e0;
-            line-height: 1.5;
+            font-family: "Manrope", sans-serif;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            background:
+                radial-gradient(circle at top left, rgba(214, 166, 95, 0.16), transparent 26%),
+                radial-gradient(circle at 88% 10%, rgba(214, 166, 95, 0.08), transparent 20%),
+                linear-gradient(180deg, #151719 0%, #101113 38%, #0b0c0f 100%);
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
         }
 
         .container {
-            max-width: 600px;
+            width: min(1500px, calc(100% - 32px));
             margin: 0 auto;
-            padding: 20px;
-            width: 100%;
         }
 
-        @media (min-width: 1024px) {
-            .container {
-                max-width: 1000px;
-                padding: 40px;
-            }
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(18px);
+            background: rgba(10, 11, 13, 0.72);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        /* Header */
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
+        .site-header .container {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
         }
 
-        .logo {
-            font-size: 2.2rem;
+        .brand {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .brand-name {
+            font-size: 1.08rem;
             font-weight: 800;
+            letter-spacing: 0.18em;
+        }
+
+        .brand-name span {
+            color: var(--gold-strong);
+        }
+
+        .brand-note {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 52px;
+            padding: 0 22px;
+            border: 0;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            font-weight: 700;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold-strong), var(--gold));
+            color: #141313;
+            box-shadow: 0 16px 36px rgba(214, 166, 95, 0.22);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--line);
+            color: var(--text);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #29d971, #1ca75d);
             color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
+            box-shadow: 0 16px 36px rgba(31, 181, 106, 0.18);
         }
 
-        .logo span {
-            color: #d4a13e;
+        .hero {
+            padding: 34px 0 80px;
         }
 
-        .subtitle {
-            color: #aaa;
-            font-size: 1.1rem;
+        .hero-shell {
+            border-radius: 40px;
+            padding: 34px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)),
+                rgba(12, 13, 16, 0.78);
+            box-shadow: var(--shadow);
         }
 
-        @media (min-width: 1024px) {
-            .logo {
-                font-size: 3rem;
-                letter-spacing: 4px;
-            }
-            
-            .subtitle {
-                font-size: 1.3rem;
-            }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 24px;
+            align-items: start;
         }
 
-        /* Main Card */
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(214, 166, 95, 0.26);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--gold-strong);
+            font-size: 0.92rem;
+        }
+
+        .hero-copy h1 {
+            margin-top: 18px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(3rem, 7vw, 5.4rem);
+            line-height: 0.9;
+            letter-spacing: -0.045em;
+            max-width: 14ch;
+        }
+
+        .hero-copy p {
+            margin-top: 18px;
+            color: var(--muted);
+            max-width: 560px;
+            font-size: 1.06rem;
+        }
+
+        .hero-actions {
+            margin-top: 26px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-points {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .hero-point {
+            padding: 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .hero-point strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.45rem;
+            line-height: 1;
+            color: var(--gold-strong);
+        }
+
+        .hero-point span {
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        .card {
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--card);
+            box-shadow: var(--shadow);
+        }
+
         .appointment-card {
-            background: #131313;
-            border-radius: 32px;
-            padding: 30px 20px;
-            border: 1px solid #2a2a2a;
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-        }
-
-        @media (min-width: 1024px) {
-            .appointment-card {
-                padding: 50px;
-            }
+            padding: 30px;
         }
 
         .card-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #fff 0%, #d4a13e 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-align: center;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            line-height: 0.94;
         }
 
         .card-subtitle {
-            color: #aaa;
-            text-align: center;
-            margin-bottom: 40px;
+            margin-top: 14px;
+            color: var(--muted);
             font-size: 1rem;
         }
 
-        @media (min-width: 1024px) {
-            .card-title {
-                font-size: 2.5rem;
-            }
-            
-            .card-subtitle {
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Quick Actions */
         .quick-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 40px;
+            margin-top: 28px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
         }
 
         .action-button {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 18px 24px;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
+            gap: 14px;
+            padding: 18px;
+            border-radius: 22px;
+            background: var(--card-2);
+            border: 1px solid var(--line);
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
         }
 
-        .action-button i {
-            font-size: 1.3rem;
-        }
-
-        .action-button.whatsapp {
-            background: #25D366;
-            color: #fff;
-        }
-
-        .action-button.whatsapp:hover {
-            background: #20b859;
-            transform: scale(1.02);
-        }
-
-        .action-button.telegram {
-            background: #0088cc;
-            color: #fff;
-        }
-
-        .action-button.telegram:hover {
-            background: #0077b5;
-            transform: scale(1.02);
-        }
-
-        .action-button.phone {
-            background: transparent;
-            color: #fff;
-            border-color: #d4a13e;
-        }
-
-        .action-button.phone:hover {
-            background: #d4a13e;
-            color: #0b0b0b;
-        }
-
-        .action-button.map {
-            background: #2a2a2a;
-            color: #d4a13e;
-            border-color: #3a3a3a;
-        }
-
-        .action-button.map i {
-            color: #FF3E3E;
-        }
-
-        .action-button.map:hover {
-            border-color: #d4a13e;
-        }
-
-        @media (min-width: 1024px) {
-            .quick-actions {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-            
-            .action-button {
-                padding: 20px 28px;
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Form Section */
-        .form-section {
-            margin: 40px 0;
-            position: relative;
-        }
-
-        .section-divider {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .divider-line {
-            flex: 1;
-            height: 1px;
-            background: #2a2a2a;
-        }
-
-        .divider-text {
-            color: #888;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Form */
-        .appointment-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-row {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-row label {
-            color: #fff;
-            font-weight: 500;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .form-row label i {
-            color: #d4a13e;
-            width: 20px;
-        }
-
-        .form-input,
-        .form-select,
-        .form-textarea {
-            background: #1e1e1e;
-            border: 1px solid #2a2a2a;
-            border-radius: 16px;
-            padding: 16px 20px;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s;
-            width: 100%;
-        }
-
-        .form-input:focus,
-        .form-select:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: #d4a13e;
-            box-shadow: 0 0 0 3px rgba(212, 161, 62, 0.1);
-        }
-
-        .form-select {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23d4a13e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 20px center;
-            background-size: 16px;
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-row-double {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        @media (min-width: 1024px) {
-            .form-row-double {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
-            }
-        }
-
-        /* Submit Button */
-        .submit-button {
-            background: #d4a13e;
-            color: #0b0b0b;
-            border: none;
-            padding: 20px;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 20px;
-            width: 100%;
-        }
-
-        .submit-button:hover {
-            background: #e0b050;
+        .action-button:hover {
             transform: translateY(-2px);
+            border-color: rgba(214, 166, 95, 0.34);
         }
 
-        .submit-button i {
-            font-size: 1.3rem;
-        }
-
-        /* Info Blocks */
-        .info-grid {
+        .action-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 40px;
-        }
-
-        .info-block {
-            background: #1a1a1a;
-            border-radius: 20px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border: 1px solid #2a2a2a;
-        }
-
-        .info-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(212, 161, 62, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #d4a13e;
+            place-items: center;
+            font-size: 1.2rem;
             flex-shrink: 0;
         }
 
-        .info-content h4 {
-            color: #fff;
-            font-weight: 600;
-            margin-bottom: 5px;
-            font-size: 1.1rem;
+        .action-button.whatsapp .action-icon {
+            background: rgba(31, 181, 106, 0.16);
+            color: #2de07d;
         }
 
-        .info-content p {
-            color: #aaa;
-            font-size: 0.95rem;
+        .action-button.telegram .action-icon {
+            background: rgba(42, 159, 232, 0.16);
+            color: #54b7f5;
         }
 
-        @media (min-width: 1024px) {
-            .info-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-            }
+        .action-button.phone .action-icon {
+            background: rgba(214, 166, 95, 0.14);
+            color: var(--gold-strong);
         }
 
-        /* Yandex Rating */
-        .yandex-rating-block {
-            background: #1a1a1a;
-            border-radius: 20px;
-            padding: 20px;
-            margin: 30px 0;
+        .action-button.map .action-icon {
+            background: rgba(255, 95, 95, 0.14);
+            color: #ff6e6e;
+        }
+
+        .action-text strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .action-text span {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .rating-block {
+            margin-top: 18px;
+            padding: 18px 20px;
+            border-radius: 24px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
-            border: 1px solid #2a2a2a;
+            gap: 16px;
+            align-items: center;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.03);
         }
 
         .rating-left {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 14px;
         }
 
-        .yandex-icon-small {
-            background: #FF3E3E;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.3rem;
+        .rating-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            background: rgba(255, 62, 62, 0.12);
+            color: #ff5d5d;
         }
 
         .rating-stars {
-            color: #FFD700;
-            letter-spacing: 2px;
+            color: #ffd45a;
+            letter-spacing: 0.12em;
         }
 
         .rating-number {
-            font-weight: 700;
-            color: #fff;
-            margin-left: 8px;
+            font-size: 1.3rem;
+            font-weight: 800;
         }
 
-        .rating-link {
-            color: #d4a13e;
-            text-decoration: none;
+        .section-divider {
             display: flex;
             align-items: center;
+            gap: 14px;
+            margin: 28px 0 22px;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: var(--line);
+        }
+
+        .divider-text {
+            color: #9f9889;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            letter-spacing: 0.12em;
+        }
+
+        .appointment-form {
+            display: grid;
+            gap: 14px;
+        }
+
+        .form-row-double {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .form-row {
+            display: grid;
             gap: 8px;
-            font-weight: 500;
         }
 
-        .rating-link:hover {
-            text-decoration: underline;
+        .form-row label {
+            color: var(--text);
+            font-size: 0.95rem;
+            font-weight: 600;
         }
 
-        /* Footer */
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #666;
-            font-size: 0.9rem;
+        .form-row label i {
+            color: var(--gold-strong);
+            margin-right: 8px;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0 10px;
-            flex-wrap: wrap;
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            min-height: 54px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text);
+            padding: 0 16px;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .footer-links a {
-            color: #888;
-            text-decoration: none;
-            transition: color 0.2s;
+        .form-textarea {
+            min-height: 128px;
+            padding: 16px;
+            resize: vertical;
         }
 
-        .footer-links a:hover {
-            color: #d4a13e;
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: #928a7b;
         }
 
-        /* Success Message */
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: rgba(214, 166, 95, 0.44);
+            box-shadow: 0 0 0 4px rgba(214, 166, 95, 0.08);
+        }
+
         .success-message {
             display: none;
-            background: #1a4d1a;
-            border: 1px solid #6bff6b;
-            color: #6bff6b;
-            padding: 20px;
-            border-radius: 20px;
-            text-align: center;
-            margin: 20px 0;
+            padding: 16px 18px;
+            border-radius: 18px;
+            background: rgba(31, 181, 106, 0.12);
+            border: 1px solid rgba(31, 181, 106, 0.24);
+            color: #d9ffe8;
         }
 
         .success-message.show {
             display: block;
         }
 
-        /* Loading State */
+        .submit-button {
+            width: 100%;
+        }
+
         .submit-button.loading {
-            opacity: 0.7;
+            opacity: 0.8;
             pointer-events: none;
         }
 
-        .submit-button.loading i {
-            animation: spin 1s linear infinite;
+        .info-grid {
+            margin-top: 26px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
         }
 
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .info-block {
+            padding: 18px;
+            border-radius: 22px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.03);
         }
 
-        /* Responsive Typography */
-        @media (max-width: 480px) {
-            .container {
-                padding: 15px;
+        .info-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            background: rgba(214, 166, 95, 0.14);
+            color: var(--gold-strong);
+            margin-bottom: 14px;
+        }
+
+        .info-block h4 {
+            margin-bottom: 6px;
+        }
+
+        .info-block p {
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .aside-stack {
+            display: grid;
+            gap: 18px;
+        }
+
+        .aside-card {
+            overflow: hidden;
+        }
+
+        .aside-image {
+            min-height: 290px;
+            background: #1b1d21;
+        }
+
+        .aside-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .aside-content {
+            padding: 26px;
+        }
+
+        .aside-content h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2rem;
+            line-height: 0.98;
+        }
+
+        .aside-content p {
+            margin-top: 12px;
+            color: var(--muted);
+        }
+
+        .aside-list {
+            margin-top: 18px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .aside-list li {
+            list-style: none;
+            display: flex;
+            gap: 12px;
+            color: var(--muted);
+        }
+
+        .aside-list i {
+            color: var(--gold-strong);
+            margin-top: 4px;
+        }
+
+        .mini-map {
+            margin-top: 20px;
+            overflow: hidden;
+            border-radius: 22px;
+            border: 1px solid var(--line);
+        }
+
+        .mini-map iframe {
+            width: 100%;
+            height: 240px;
+            border: 0;
+        }
+
+        .site-footer {
+            padding: 28px 0 96px;
+            color: #a1988b;
+            font-size: 0.95rem;
+        }
+
+        .footer-row {
+            padding-top: 22px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .mobile-bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 45;
+            display: none;
+            gap: 10px;
+            padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+            background: rgba(9, 10, 12, 0.92);
+            backdrop-filter: blur(18px);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .mobile-bar .btn {
+            flex: 1;
+            min-height: 50px;
+            padding: 0 14px;
+            font-size: 0.94rem;
+        }
+
+        @media (max-width: 1080px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
             }
-            
-            .card-title {
-                font-size: 1.5rem;
+
+            .info-grid,
+            .quick-actions {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
-            
-            .action-button {
-                padding: 16px 20px;
-                font-size: 1rem;
+        }
+
+        @media (max-width: 760px) {
+            .site-header .container,
+            .header-actions {
+                gap: 10px;
             }
-            
-            .info-block {
-                padding: 15px;
+
+            .header-actions .btn span {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 22px;
+            }
+
+            .hero-shell {
+                padding: 22px;
+                border-radius: 28px;
+            }
+
+            .hero-copy h1 {
+                max-width: none;
+            }
+
+            .hero-points,
+            .quick-actions,
+            .form-row-double,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .appointment-card,
+            .aside-content {
+                padding: 22px;
+            }
+
+            .rating-block {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .mobile-bar {
+                display: flex;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header with Logo -->
-        <div class="header">
-            <div class="logo">LUX<span>AUTO</span>SPA</div>
-            <div class="subtitle">Премиальный детейлинг в Москве</div>
-        </div>
-
-        <!-- Main Appointment Card -->
-        <div class="appointment-card">
-            <h1 class="card-title">Запишитесь на детейлинг</h1>
-            <p class="card-subtitle">Выберите удобный способ связи или оставьте заявку</p>
-
-            <!-- Quick Actions (Mobile First - Stack, Desktop - Grid) -->
-            <div class="quick-actions">
-                <a href="https://wa.me/79636941515?text=Здравствуйте!%20Хочу%20записаться%20на%20детейлинг" target="_blank" class="action-button whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp</span>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="brand" aria-label="LuxAutoSpa">
+                <div class="brand-name">LUX<span>AUTO</span>SPA</div>
+                <div class="brand-note">Детейлинг-центр в Москве</div>
+            </a>
+            <div class="header-actions">
+                <a class="btn btn-secondary" href="/">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>На главную</span>
                 </a>
-                <a href="https://t.me/luxautospa" target="_blank" class="action-button telegram">
-                    <i class="fab fa-telegram"></i>
-                    <span>Telegram</span>
+                <a class="btn btn-primary" href="https://yandex.ru/maps/?ll=37.743638%2C55.588394&rtd=0&rtext=~55.588394%2C37.743638&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D214010422076&start_navigation=true&z=14&from=mapframe" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-route"></i>
+                    <span>Построить маршрут</span>
                 </a>
-                <a href="tel:+79340040579" class="action-button phone">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>Позвонить</span>
-                </a>
-                <a href="https://yandex.ru/maps/-/CPu0nWmW" target="_blank" class="action-button map">
-                    <i class="fab fa-yandex"></i>
-                    <span>На карте</span>
-                </a>
-            </div>
-
-            <!-- Yandex Rating Block -->
-            <div class="yandex-rating-block">
-                <div class="rating-left">
-                    <div class="yandex-icon-small">
-                        <i class="fab fa-yandex"></i>
-                    </div>
-                    <div>
-                        <div class="rating-stars">★★★★★</div>
-                        <div><span class="rating-number">4.9</span> <span style="color: #888;">• 187 отзывов</span></div>
-                    </div>
-                </div>
-                <a href="https://yandex.ru/maps/-/CPu0nWmW" target="_blank" class="rating-link">
-                    <span>Читать отзывы</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-
-            <!-- Form Section -->
-            <div class="form-section">
-                <div class="section-divider">
-                    <div class="divider-line"></div>
-                    <span class="divider-text">или оставьте заявку</span>
-                    <div class="divider-line"></div>
-                </div>
-
-                <form class="appointment-form" id="appointmentForm">
-                    <div class="form-row-double">
-                        <div class="form-row">
-                            <label for="name"><i class="fas fa-user"></i> Ваше имя</label>
-                            <input type="text" id="name" name="name" class="form-input" placeholder="Например, Александр" required>
-                        </div>
-                        <div class="form-row">
-                            <label for="phone"><i class="fas fa-phone"></i> Телефон</label>
-                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+7 (999) 123-45-67" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row-double">
-                        <div class="form-row">
-                            <label for="car"><i class="fas fa-car"></i> Автомобиль</label>
-                            <input type="text" id="car" name="car" class="form-input" placeholder="Марка и модель">
-                        </div>
-                        <div class="form-row">
-                            <label for="service"><i class="fas fa-tools"></i> Услуга</label>
-                            <select id="service" name="service" class="form-select">
-                                <option value="" disabled selected>Выберите услугу</option>
-                                <option value="polishing">Полировка кузова</option>
-                                <option value="chemdry">Химчистка салона</option>
-                                <option value="restoration">Реставрация кожи</option>
-                                <option value="ceramic">Керамическое покрытие</option>
-                                <option value="washing">Перешив руля</option>
-                                <option value="other">Другое</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <label for="date"><i class="fas fa-calendar-alt"></i> Желаемая дата</label>
-                        <input type="date" id="date" name="date" class="form-input" min="2026-03-16">
-                    </div>
-
-                    <div class="form-row">
-                        <label for="comment"><i class="fas fa-comment"></i> Комментарий</label>
-                        <textarea id="comment" name="comment" class="form-textarea" placeholder="Дополнительные пожелания..."></textarea>
-                    </div>
-
-                    <div class="success-message" id="successMessage">
-                        <i class="fas fa-check-circle" style="margin-right: 10px;"></i>
-                        Спасибо! Мы свяжемся с вами в ближайшее время.
-                    </div>
-
-                    <button type="submit" class="submit-button" id="submitBtn">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>Отправить заявку</span>
-                    </button>
-                </form>
-            </div>
-
-            <!-- Info Blocks -->
-            <div class="info-grid">
-                <div class="info-block">
-                    <div class="info-icon"><i class="fas fa-clock"></i></div>
-                    <div class="info-content">
-                        <h4>Время работы</h4>
-                        <p>Ежедневно с 10:00 до 20:00</p>
-                    </div>
-                </div>
-                <div class="info-block">
-                    <div class="info-icon"><i class="fas fa-map-pin"></i></div>
-                    <div class="info-content">
-                        <h4>Адрес</h4>
-                        <p>Каширское шоссе, 23-й км</p>
-                    </div>
-                </div>
-                <div class="info-block">
-                    <div class="info-icon"><i class="fas fa-shield-alt"></i></div>
-                    <div class="info-content">
-                        <h4>Гарантия</h4>
-                        <p>На все виды работ</p>
-                    </div>
-                </div>
             </div>
         </div>
+    </header>
 
-        <!-- Footer -->
-        <div class="footer">
-            <div class="footer-links">
-                <a href="/">Главная</a>
-                <a href="/#service">Услуги</a>
-                <a href="/#contacts">Контакты</a>
-                <a href="/privacy-policy/">Политика</a>
-                <a href="/user-agreement/">Соглашение</a>
+    <main class="hero">
+        <div class="container">
+            <div class="hero-shell">
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <div class="eyebrow">
+                            <i class="fas fa-calendar-check"></i>
+                            Запись в LuxAutoSpa
+                        </div>
+                        <h1>Выберите удобный способ и запишитесь за пару минут</h1>
+                        <p>Можно сразу оставить заявку через форму, написать в WhatsApp или Telegram, позвонить нам или построить маршрут до студии. Всё собрано в одном месте, чтобы запись была быстрой и понятной.</p>
+                        <div class="hero-actions">
+                            <a class="btn btn-primary" href="#appointmentForm">
+                                <i class="fas fa-pen"></i>
+                                Заполнить форму
+                            </a>
+                            <a class="btn btn-secondary" href="https://yandex.ru/maps/?ll=37.743638%2C55.588394&rtd=0&rtext=~55.588394%2C37.743638&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D214010422076&start_navigation=true&z=14&from=mapframe" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-route"></i>
+                                Построить маршрут
+                            </a>
+                        </div>
+                        <div class="hero-points">
+                            <div class="hero-point">
+                                <strong>4.9</strong>
+                                <span>рейтинг на Яндекс Картах и 187 отзывов</span>
+                            </div>
+                            <div class="hero-point">
+                                <strong>10:00-20:00</strong>
+                                <span>ежедневно, чтобы было проще выбрать время</span>
+                            </div>
+                            <div class="hero-point">
+                                <strong>4 способа</strong>
+                                <span>формат связи на выбор без ожидания и поисков</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="aside-stack">
+                        <section class="appointment-card card">
+                            <h2 class="card-title">Запишитесь на детейлинг</h2>
+                            <p class="card-subtitle">Оставьте заявку через форму или выберите удобный способ связи прямо сейчас.</p>
+
+                            <div class="quick-actions">
+                                <a href="https://wa.me/79636941515?text=Здравствуйте!%20Хочу%20записаться%20на%20детейлинг" target="_blank" rel="noopener noreferrer" class="action-button whatsapp">
+                                    <div class="action-icon"><i class="fab fa-whatsapp"></i></div>
+                                    <div class="action-text">
+                                        <strong>WhatsApp</strong>
+                                        <span>Быстро написать</span>
+                                    </div>
+                                </a>
+                                <a href="https://t.me/luxautospa" target="_blank" rel="noopener noreferrer" class="action-button telegram">
+                                    <div class="action-icon"><i class="fab fa-telegram"></i></div>
+                                    <div class="action-text">
+                                        <strong>Telegram</strong>
+                                        <span>Удобно для переписки</span>
+                                    </div>
+                                </a>
+                                <a href="tel:+79340040579" class="action-button phone">
+                                    <div class="action-icon"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="action-text">
+                                        <strong>Позвонить</strong>
+                                        <span>Если хотите быстрее обсудить</span>
+                                    </div>
+                                </a>
+                                <a href="https://yandex.ru/maps/?ll=37.743638%2C55.588394&rtd=0&rtext=~55.588394%2C37.743638&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D214010422076&start_navigation=true&z=14&from=mapframe" target="_blank" rel="noopener noreferrer" class="action-button map">
+                                    <div class="action-icon"><i class="fas fa-route"></i></div>
+                                    <div class="action-text">
+                                        <strong>Построить маршрут</strong>
+                                        <span>Сразу открыть путь до студии</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="rating-block">
+                                <div class="rating-left">
+                                    <div class="rating-icon"><i class="fab fa-yandex"></i></div>
+                                    <div>
+                                        <div class="rating-stars">★★★★★</div>
+                                        <div><span class="rating-number">4.9</span> <span style="color: #8e8678;">• 187 отзывов</span></div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-secondary" href="https://yandex.ru/maps/-/CPu0nWmW" target="_blank" rel="noopener noreferrer">Читать отзывы</a>
+                            </div>
+
+                            <div class="section-divider">
+                                <div class="divider-line"></div>
+                                <span class="divider-text">или оставьте заявку</span>
+                                <div class="divider-line"></div>
+                            </div>
+
+                            <form class="appointment-form" id="appointmentForm">
+                                <div class="form-row-double">
+                                    <div class="form-row">
+                                        <label for="name"><i class="fas fa-user"></i> Ваше имя</label>
+                                        <input type="text" id="name" name="name" class="form-input" placeholder="Например, Александр" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <label for="phone"><i class="fas fa-phone"></i> Телефон</label>
+                                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="+7 (999) 123-45-67" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row-double">
+                                    <div class="form-row">
+                                        <label for="car"><i class="fas fa-car"></i> Автомобиль</label>
+                                        <input type="text" id="car" name="car" class="form-input" placeholder="Марка и модель">
+                                    </div>
+                                    <div class="form-row">
+                                        <label for="service"><i class="fas fa-tools"></i> Услуга</label>
+                                        <select id="service" name="service" class="form-select">
+                                            <option value="" selected disabled>Выберите услугу</option>
+                                            <option value="polishing">Полировка кузова</option>
+                                            <option value="chemdry">Химчистка салона</option>
+                                            <option value="restoration">Реставрация кожи</option>
+                                            <option value="ceramic">Керамическое покрытие</option>
+                                            <option value="washing">Перешив руля</option>
+                                            <option value="other">Другое</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row-double">
+                                    <div class="form-row">
+                                        <label for="date"><i class="fas fa-calendar-alt"></i> Желаемая дата</label>
+                                        <input type="date" id="date" name="date" class="form-input">
+                                    </div>
+                                    <div class="form-row">
+                                        <label for="time"><i class="fas fa-clock"></i> Желаемое время</label>
+                                        <select id="time" name="time" class="form-select" required>
+                                            <option value="" selected disabled>Выберите время</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="comment"><i class="fas fa-comment"></i> Комментарий</label>
+                                    <textarea id="comment" name="comment" class="form-textarea" placeholder="Например: светлый салон, нужна химчистка и консультация по коже"></textarea>
+                                </div>
+
+                                <div class="success-message" id="successMessage">
+                                    <i class="fas fa-check-circle" style="margin-right: 10px;"></i>
+                                    Спасибо! Ваша заявка принята, мы свяжемся с вами в ближайшее время.
+                                </div>
+
+                                <button type="submit" class="btn btn-primary submit-button" id="submitBtn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span>Отправить заявку</span>
+                                </button>
+                            </form>
+
+                            <div class="info-grid">
+                                <div class="info-block">
+                                    <div class="info-icon"><i class="fas fa-clock"></i></div>
+                                    <h4>Ежедневно</h4>
+                                    <p>Работаем с 10:00 до 20:00 без лишней спешки.</p>
+                                </div>
+                                <div class="info-block">
+                                    <div class="info-icon"><i class="fas fa-map-pin"></i></div>
+                                    <h4>Удобный адрес</h4>
+                                    <p>Каширское шоссе, 23-й километр, вл1с2.</p>
+                                </div>
+                                <div class="info-block">
+                                    <div class="info-icon"><i class="fas fa-shield-alt"></i></div>
+                                    <h4>Гарантия</h4>
+                                    <p>На все виды работ и аккуратный подход к авто.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="aside-card card">
+                            <div class="aside-image">
+                                <img src="/assets/images/gallery/3.png" alt="Салон автомобиля после детейлинга" onerror="this.src='https://via.placeholder.com/1200x800/1b1d21/f5f1e8?text=LuxAutoSpa';">
+                            </div>
+                            <div class="aside-content">
+                                <h3>Чтобы запись заняла минимум времени</h3>
+                                <p>Если вы не уверены, какую услугу выбрать, просто опишите задачу в форме или напишите нам. Подскажем, что даст лучший результат именно в вашем случае.</p>
+                                <ul class="aside-list">
+                                    <li><i class="fas fa-check"></i><span>Можно оставить заявку через форму и спокойно дождаться обратной связи.</span></li>
+                                    <li><i class="fas fa-check"></i><span>Можно сразу написать в WhatsApp или Telegram, если удобнее обсудить детали в переписке.</span></li>
+                                    <li><i class="fas fa-check"></i><span>Если уже решили приехать, откройте маршрут и быстро найдёте студию.</span></li>
+                                </ul>
+                                <div class="mini-map">
+                                    <iframe src="https://yandex.ru/map-widget/v1/?ll=37.744724%2C55.588347&mode=search&oid=214010422076&ol=biz&z=18.97" allowfullscreen title="Карта LuxAutoSpa"></iframe>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </div>
-            <p>© 2026 LuxAutoSpa — Премиальный детейлинг</p>
         </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-row">
+                <span>© <span id="year"></span> LuxAutoSpa. Запись на детейлинг, химчистку, полировку и восстановление салона.</span>
+                <div class="footer-links">
+                    <a href="/">Главная</a>
+                    <a href="https://wa.me/79636941515?text=Здравствуйте!%20Хочу%20записаться%20на%20детейлинг" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    <a href="https://t.me/luxautospa" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    <a href="https://yandex.ru/maps/?ll=37.743638%2C55.588394&rtd=0&rtext=~55.588394%2C37.743638&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D214010422076&start_navigation=true&z=14&from=mapframe" target="_blank" rel="noopener noreferrer">Маршрут</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-bar">
+        <a class="btn btn-secondary" href="https://yandex.ru/maps/?ll=37.743638%2C55.588394&rtd=0&rtext=~55.588394%2C37.743638&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D214010422076&start_navigation=true&z=14&from=mapframe" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-route"></i>
+            Маршрут
+        </a>
+        <a class="btn btn-primary" href="#appointmentForm">
+            <i class="fas fa-calendar-check"></i>
+            Записаться
+        </a>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('appointmentForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const successMessage = document.getElementById('successMessage');
-            
-            // Set min date for date input (today)
-            const today = new Date().toISOString().split('T')[0];
-            const dateInput = document.getElementById('date');
-            if (dateInput) {
-                dateInput.min = today;
-            }
-            
-            // Phone number formatting
-            const phoneInput = document.getElementById('phone');
-            if (phoneInput) {
-                phoneInput.addEventListener('input', function(e) {
-                    let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
-                    e.target.value = !x[2] ? x[1] : '+7 (' + x[2] + ') ' + x[3] + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("appointmentForm");
+            const submitBtn = document.getElementById("submitBtn");
+            const successMessage = document.getElementById("successMessage");
+            const params = new URLSearchParams(window.location.search);
+            const dateInput = document.getElementById("date");
+            const timeSelect = document.getElementById("time");
+            const phoneInput = document.getElementById("phone");
+            const nameInput = document.getElementById("name");
+
+            const schedule = [
+                "10:00", "11:00", "12:00", "13:00", "14:00",
+                "15:00", "16:00", "17:00", "18:00", "19:00"
+            ];
+
+            function fillTimeOptions() {
+                timeSelect.innerHTML = '<option value="" selected disabled>Выберите время</option>';
+                schedule.forEach(function (time) {
+                    const option = document.createElement("option");
+                    option.value = time;
+                    option.textContent = time;
+                    timeSelect.appendChild(option);
                 });
             }
-            
-            // Form submission
+
+            if (dateInput) {
+                const today = new Date().toISOString().split("T")[0];
+                dateInput.min = today;
+                dateInput.addEventListener("change", fillTimeOptions);
+            }
+
+            fillTimeOptions();
+
+            if (phoneInput) {
+                phoneInput.addEventListener("input", function (event) {
+                    const digits = event.target.value.replace(/\D/g, "").replace(/^8/, "7");
+                    const match = digits.match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+                    if (!match) return;
+                    const parts = [];
+                    if (match[2]) parts.push("+7 (" + match[2]);
+                    if (match[3]) parts.push(") " + match[3]);
+                    if (match[4]) parts.push("-" + match[4]);
+                    if (match[5]) parts.push("-" + match[5]);
+                    event.target.value = parts.join("");
+                });
+            }
+
+            if (nameInput && params.get("name")) {
+                nameInput.value = params.get("name");
+            }
+
+            if (phoneInput && params.get("phone")) {
+                phoneInput.value = params.get("phone");
+            }
+
             if (form) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Validate required fields
-                    const name = document.getElementById('name').value.trim();
-                    const phone = document.getElementById('phone').value.trim();
-                    
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    const name = document.getElementById("name").value.trim();
+                    const phone = document.getElementById("phone").value.trim();
+
                     if (!name || !phone) {
-                        alert('Пожалуйста, заполните имя и телефон');
+                        alert("Пожалуйста, заполните имя и телефон.");
                         return;
                     }
-                    
-                    // Show loading state
-                    submitBtn.classList.add('loading');
-                    submitBtn.innerHTML = '<i class="fas fa-spinner"></i> Отправка...';
-                    
-                    // Collect form data
+
+                    submitBtn.classList.add("loading");
+                    submitBtn.innerHTML = '<i class="fas fa-spinner"></i><span>Отправка...</span>';
+
                     const formData = {
                         name: name,
                         phone: phone,
-                        car: document.getElementById('car').value,
-                        service: document.getElementById('service').value,
-                        date: document.getElementById('date').value,
-                        comment: document.getElementById('comment').value
+                        car: document.getElementById("car").value.trim(),
+                        service: document.getElementById("service").value,
+                        date: document.getElementById("date").value,
+                        time: document.getElementById("time").value,
+                        comment: document.getElementById("comment").value.trim()
                     };
-                    
-                    // Prepare WhatsApp message
+
                     const serviceNames = {
-                        'polishing': 'Полировка кузова',
-                        'chemdry': 'Химчистка салона',
-                        'restoration': 'Реставрация кожи',
-                        'ceramic': 'Керамическое покрытие',
-                        'washing': 'Перетяжка руля',
-                        'other': 'Другое'
+                        polishing: "Полировка кузова",
+                        chemdry: "Химчистка салона",
+                        restoration: "Реставрация кожи",
+                        ceramic: "Керамическое покрытие",
+                        washing: "Перешив руля",
+                        other: "Другое"
                     };
-                    
-                    const serviceText = formData.service ? serviceNames[formData.service] || formData.service : 'Не выбрано';
-                    
-                    let message = `Здравствуйте! Меня зовут ${formData.name}. Хочу записаться на детейлинг.\n`;
-                    message += `Телефон: ${formData.phone}\n`;
-                    message += `Автомобиль: ${formData.car || 'Не указан'}\n`;
-                    message += `Услуга: ${serviceText}\n`;
-                    
+
+                    let message = "Здравствуйте! Хочу записаться в LuxAutoSpa.\n";
+                    message += "Имя: " + formData.name + "\n";
+                    message += "Телефон: " + formData.phone + "\n";
+                    message += "Автомобиль: " + (formData.car || "Не указан") + "\n";
+                    message += "Услуга: " + (serviceNames[formData.service] || "Не выбрана") + "\n";
+
                     if (formData.date) {
                         const date = new Date(formData.date);
-                        const formattedDate = date.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' });
-                        message += `Желаемая дата: ${formattedDate}\n`;
+                        const formattedDate = date.toLocaleDateString("ru-RU", { day: "numeric", month: "long" });
+                        message += "Дата: " + formattedDate + "\n";
                     }
-                    
+
+                    if (formData.time) {
+                        message += "Время: " + formData.time + "\n";
+                    }
+
                     if (formData.comment) {
-                        message += `Комментарий: ${formData.comment}`;
+                        message += "Комментарий: " + formData.comment;
                     }
-                    
-                    // Simulate form submission (replace with actual AJAX call if needed)
-                    setTimeout(() => {
-                        // Show success message
-                        successMessage.classList.add('show');
-                        
-                        // Reset button state
-                        submitBtn.classList.remove('loading');
-                        submitBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Отправить заявку';
-                        
-                        // Open WhatsApp with form data
-                        //window.open(`https://wa.me/79636941515?text=${encodeURIComponent(message)}`, '_blank');
-                        
-                        // Optional: reset form
-                        // form.reset();
-                        
-                        // Hide success message after 5 seconds
-                        setTimeout(() => {
-                            successMessage.classList.remove('show');
+
+                    setTimeout(function () {
+                        submitBtn.classList.remove("loading");
+                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>Отправить заявку</span>';
+                        successMessage.classList.add("show");
+                        console.log(message);
+
+                        setTimeout(function () {
+                            successMessage.classList.remove("show");
                         }, 5000);
-                    }, 1000);
+                    }, 900);
                 });
             }
-            
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
         });
     </script>
-
-    <script src="/js/forms.js"></script>
-
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107214723', 'ym');
-
-        ym(107214723, 'init', {ssr:true, webvisor:true, trackHash:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/107214723" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
 </body>
 </html>
