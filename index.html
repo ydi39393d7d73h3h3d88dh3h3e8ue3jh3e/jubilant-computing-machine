@@ -12,17 +12,22 @@
     <meta property="og:description" content="Красивый результат, понятный сервис и быстрая запись на удобное время.">
     <meta property="og:url" content="https://luxautospa.ru/">
     <meta property="og:image" content="https://luxautospa.ru/assets/images/gallery/1.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/assets/vendor/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/assets/vendor/fontawesome/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="/assets/vendor/fonts/fonts.css">
+        <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css">
     </noscript>
     <script>
-        window.addEventListener("load", function () {
-            window.setTimeout(function () {
+        (function () {
+            let metrikaLoaded = false;
+
+            function loadMetrika() {
+                if (metrikaLoaded) {
+                    return;
+                }
+
+                metrikaLoaded = true;
                 (function (m, e, t, r, i, k, a) {
                     m[i] = m[i] || function () {
                         (m[i].a = m[i].a || []).push(arguments);
@@ -40,8 +45,20 @@
                     trackLinks: true,
                     accurateTrackBounce: true
                 });
-            }, 1);
-        });
+            }
+
+            ["pointerdown", "keydown", "touchstart", "scroll"].forEach(function (eventName) {
+                window.addEventListener(eventName, loadMetrika, { once: true, passive: true });
+            });
+
+            window.addEventListener("load", function () {
+                if ("requestIdleCallback" in window) {
+                    requestIdleCallback(loadMetrika, { timeout: 5000 });
+                } else {
+                    setTimeout(loadMetrika, 5000);
+                }
+            });
+        })();
     </script>
     <script type="application/ld+json">
         {
@@ -212,6 +229,7 @@
             gap: 12px;
             flex-wrap: wrap;
             justify-content: flex-end;
+            min-width: 360px;
         }
 
         .header-phone {
@@ -223,6 +241,7 @@
             border-radius: 999px;
             background: rgba(255, 255, 255, 0.03);
             font-weight: 600;
+            min-width: 210px;
         }
 
         .header-phone i {
@@ -241,6 +260,8 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
             cursor: pointer;
             font-weight: 700;
+            text-align: center;
+            white-space: nowrap;
         }
 
         .btn:hover {
@@ -321,6 +342,11 @@
             flex-wrap: wrap;
             gap: 12px;
             margin-top: 28px;
+            align-items: stretch;
+        }
+
+        .hero-actions .btn {
+            min-width: 206px;
         }
 
         .hero-points {
@@ -893,6 +919,10 @@
                 display: none;
             }
 
+            .header-actions {
+                min-width: auto;
+            }
+
             .hero {
                 padding-top: 24px;
             }
@@ -942,11 +972,11 @@
                 <div class="brand-note">Детейлинг-центр в Москве</div>
             </a>
             <div class="header-actions">
-                <a class="header-phone" href="tel:+79340040579">
+                <a class="header-phone" href="tel:+79340040579" aria-label="Позвонить в LuxAutoSpa по номеру +7 (934) 004-05-79">
                     <i class="fas fa-phone"></i>
                     <span>+7 (934) 004-05-79</span>
                 </a>
-                <a class="btn btn-primary" href="/appointment">
+                <a class="btn btn-primary" href="/appointment" aria-label="Открыть страницу записи в LuxAutoSpa">
                     <i class="fas fa-calendar-check"></i>
                     <span>Записаться</span>
                 </a>
