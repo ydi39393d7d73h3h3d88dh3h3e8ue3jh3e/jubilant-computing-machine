@@ -90,8 +90,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </noscript>
     
     <style>
         * {
@@ -790,6 +794,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="/assets/css/article-theme.css">
 </head>
 <body>
     <header class="header">
@@ -798,7 +803,7 @@
                 <a href="/">LUX<span>AUTO</span>SPA</a>
             </div>
             <div class="header-info">
-                <a href="tel:+79340040579" class="header-phone"><i class="fas fa-phone-alt"></i> <span></span></a>
+                <a href="tel:+79340040579" class="header-phone"><i class="fas fa-phone-alt"></i> <span>+7 (934) 004-05-79</span></a>
                 <a href="https://wa.me/79636941515?text=Здравствуйте!%20Интересует%20перешив%20руля" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> <span>Написать в WhatsApp</span></a>
             </div>
         </div>

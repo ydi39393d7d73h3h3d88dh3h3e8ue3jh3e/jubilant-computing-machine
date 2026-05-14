@@ -14,25 +14,33 @@
     <meta property="og:image" content="https://luxautospa.ru/assets/images/gallery/1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </noscript>
     <script>
-        (function (m, e, t, r, i, k, a) {
-            m[i] = m[i] || function () {
-                (m[i].a = m[i].a || []).push(arguments);
-            };
-            m[i].l = 1 * new Date();
-            k = e.createElement(t);
-            a = e.getElementsByTagName(t)[0];
-            k.async = 1;
-            k.src = r;
-            a.parentNode.insertBefore(k, a);
-        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        window.addEventListener("load", function () {
+            window.setTimeout(function () {
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () {
+                        (m[i].a = m[i].a || []).push(arguments);
+                    };
+                    m[i].l = 1 * new Date();
+                    k = e.createElement(t);
+                    a = e.getElementsByTagName(t)[0];
+                    k.async = 1;
+                    k.src = r;
+                    a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-        ym(107214723, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true
+                ym(107214723, "init", {
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true
+                });
+            }, 1);
         });
     </script>
     <script type="application/ld+json">
@@ -99,6 +107,14 @@
         img {
             display: block;
             width: 100%;
+        }
+
+        .progressive-image {
+            background:
+                linear-gradient(135deg, rgba(214, 166, 95, 0.12), rgba(255, 255, 255, 0.04)),
+                #1b1d21;
+            filter: blur(0);
+            transition: opacity 0.35s ease;
         }
 
         a {
@@ -978,7 +994,17 @@
 
                         <div class="hero-visual">
                             <div class="hero-main-card">
-                                <img src="/assets/images/gallery/1.png" alt="Результат детейлинга автомобиля" onerror="this.src='https://via.placeholder.com/1200x900/1b1d21/f5f1e8?text=LuxAutoSpa';">
+                                <img
+                                    src="/assets/images/optimized/gallery/1-480.jpg"
+                                    srcset="/assets/images/optimized/gallery/1-480.jpg 480w, /assets/images/optimized/gallery/1-960.jpg 960w, /assets/images/gallery/1.png 1264w"
+                                    sizes="(max-width: 1080px) 100vw, 50vw"
+                                    width="1264"
+                                    height="843"
+                                    alt="Результат детейлинга автомобиля"
+                                    fetchpriority="high"
+                                    decoding="async"
+                                    onerror="this.src='https://via.placeholder.com/1200x900/1b1d21/f5f1e8?text=LuxAutoSpa';"
+                                >
                                 <div class="hero-badge-card">
                                     <div class="hero-badge-top">
                                         <div class="hero-rating">
@@ -991,9 +1017,9 @@
                                 </div>
                             </div>
                             <div class="hero-thumbs">
-                                <div class="hero-thumb"><img src="/assets/images/gallery/2.png" alt="Процесс работы" onerror="this.src='https://via.placeholder.com/800x600/1b1d21/f5f1e8?text=Detailing';"></div>
-                                <div class="hero-thumb"><img src="/assets/images/gallery/3.png" alt="Интерьер автомобиля после химчистки" onerror="this.src='https://via.placeholder.com/800x600/1b1d21/f5f1e8?text=Interior';"></div>
-                                <div class="hero-thumb"><img src="/assets/images/gallery/4.png" alt="Работа по восстановлению салона" onerror="this.src='https://via.placeholder.com/800x600/1b1d21/f5f1e8?text=Restoration';"></div>
+                                <div class="hero-thumb"><img class="progressive-image" src="/assets/images/optimized/gallery/2-480.jpg" data-full-src="/assets/images/optimized/gallery/2-960.jpg" width="1264" height="843" alt="Процесс работы" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/800x600/1b1d21/f5f1e8?text=Detailing';"></div>
+                                <div class="hero-thumb"><img class="progressive-image" src="/assets/images/optimized/gallery/3-480.jpg" data-full-src="/assets/images/optimized/gallery/3-960.jpg" width="1264" height="848" alt="Интерьер автомобиля после химчистки" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/800x600/1b1d21/f5f1e8?text=Interior';"></div>
+                                <div class="hero-thumb"><img class="progressive-image" src="/assets/images/optimized/gallery/4-480.jpg" data-full-src="/assets/images/optimized/gallery/4-960.jpg" width="1264" height="848" alt="Работа по восстановлению салона" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/800x600/1b1d21/f5f1e8?text=Restoration';"></div>
                             </div>
                         </div>
                     </div>
@@ -1099,7 +1125,7 @@
             <div class="container">
                 <div class="highlight">
                     <div class="highlight-card">
-                        <img src="/assets/images/logo.png" alt="LuxAutoSpa studio" onerror="this.src='https://via.placeholder.com/1200x1400/1b1d21/f5f1e8?text=LuxAutoSpa';">
+                        <img class="progressive-image" src="/assets/images/optimized/logo-480.png" data-full-src="/assets/images/optimized/logo-960.png" width="1376" height="768" alt="LuxAutoSpa studio" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/1200x1400/1b1d21/f5f1e8?text=LuxAutoSpa';">
                     </div>
                     <div class="quote-card">
                         <div>
@@ -1305,7 +1331,7 @@
                     </div>
 
                     <div class="contact-map">
-                        <iframe src="https://yandex.ru/map-widget/v1/?ll=37.744724%2C55.588347&mode=search&oid=214010422076&ol=biz&z=18.97" allowfullscreen title="Карта LuxAutoSpa"></iframe>
+                        <iframe src="https://yandex.ru/map-widget/v1/?ll=37.744724%2C55.588347&mode=search&oid=214010422076&ol=biz&z=18.97" loading="lazy" allowfullscreen title="Карта LuxAutoSpa"></iframe>
                     </div>
                 </div>
             </div>
@@ -1359,6 +1385,45 @@
                 if (phone) params.set("phone", phone);
                 window.location.href = "/appointment/" + (params.toString() ? "?" + params.toString() : "");
             });
+        }
+
+        const progressiveImages = document.querySelectorAll("img[data-full-src]");
+        const loadProgressiveImage = function (image) {
+            if (!image || image.dataset.loaded === "true") {
+                return;
+            }
+
+            const fullSrc = image.dataset.fullSrc;
+            const preloader = new Image();
+            preloader.decoding = "async";
+            preloader.src = fullSrc;
+            preloader.onload = function () {
+                image.src = fullSrc;
+                image.dataset.loaded = "true";
+            };
+            preloader.onerror = function () {
+                image.src = fullSrc;
+                image.dataset.loaded = "true";
+            };
+        };
+
+        if ("IntersectionObserver" in window) {
+            const progressiveObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    loadProgressiveImage(entry.target);
+                    observer.unobserve(entry.target);
+                });
+            }, { rootMargin: "200px 0px" });
+
+            progressiveImages.forEach(function (image) {
+                progressiveObserver.observe(image);
+            });
+        } else {
+            progressiveImages.forEach(loadProgressiveImage);
         }
     </script>
 </body>

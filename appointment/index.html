@@ -13,25 +13,33 @@
     <meta property="og:image" content="https://luxautospa.ru/assets/images/gallery/1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </noscript>
     <script>
-        (function (m, e, t, r, i, k, a) {
-            m[i] = m[i] || function () {
-                (m[i].a = m[i].a || []).push(arguments);
-            };
-            m[i].l = 1 * new Date();
-            k = e.createElement(t);
-            a = e.getElementsByTagName(t)[0];
-            k.async = 1;
-            k.src = r;
-            a.parentNode.insertBefore(k, a);
-        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        window.addEventListener("load", function () {
+            window.setTimeout(function () {
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () {
+                        (m[i].a = m[i].a || []).push(arguments);
+                    };
+                    m[i].l = 1 * new Date();
+                    k = e.createElement(t);
+                    a = e.getElementsByTagName(t)[0];
+                    k.async = 1;
+                    k.src = r;
+                    a.parentNode.insertBefore(k, a);
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-        ym(107214723, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true
+                ym(107214723, "init", {
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true
+                });
+            }, 1);
         });
     </script>
     <style>
@@ -85,6 +93,13 @@
         .container {
             width: min(1500px, calc(100% - 32px));
             margin: 0 auto;
+        }
+
+        .progressive-image {
+            background:
+                linear-gradient(135deg, rgba(214, 166, 95, 0.12), rgba(255, 255, 255, 0.04)),
+                #1b1d21;
+            transition: opacity 0.35s ease;
         }
 
         .site-header {
@@ -868,7 +883,7 @@
 
                         <section class="aside-card card">
                             <div class="aside-image">
-                                <img src="/assets/images/gallery/3.png" alt="Салон автомобиля после детейлинга" onerror="this.src='https://via.placeholder.com/1200x800/1b1d21/f5f1e8?text=LuxAutoSpa';">
+                                <img class="progressive-image" src="/assets/images/optimized/gallery/3-480.jpg" data-full-src="/assets/images/optimized/gallery/3-960.jpg" width="1264" height="848" alt="Салон автомобиля после детейлинга" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/1200x800/1b1d21/f5f1e8?text=LuxAutoSpa';">
                             </div>
                             <div class="aside-content">
                                 <h3>Чтобы запись заняла минимум времени</h3>
@@ -879,7 +894,7 @@
                                     <li><i class="fas fa-check"></i><span>Если уже решили приехать, откройте маршрут и быстро найдёте студию.</span></li>
                                 </ul>
                                 <div class="mini-map">
-                                    <iframe src="https://yandex.ru/map-widget/v1/?ll=37.744724%2C55.588347&mode=search&oid=214010422076&ol=biz&z=18.97" allowfullscreen title="Карта LuxAutoSpa"></iframe>
+                                    <iframe src="https://yandex.ru/map-widget/v1/?ll=37.744724%2C55.588347&mode=search&oid=214010422076&ol=biz&z=18.97" loading="lazy" allowfullscreen title="Карта LuxAutoSpa"></iframe>
                                 </div>
                             </div>
                         </section>
@@ -1038,8 +1053,46 @@
                     }, 900);
                 });
             }
+
+            const progressiveImages = document.querySelectorAll("img[data-full-src]");
+            const loadProgressiveImage = function (image) {
+                if (!image || image.dataset.loaded === "true") {
+                    return;
+                }
+
+                const fullSrc = image.dataset.fullSrc;
+                const preloader = new Image();
+                preloader.decoding = "async";
+                preloader.src = fullSrc;
+                preloader.onload = function () {
+                    image.src = fullSrc;
+                    image.dataset.loaded = "true";
+                };
+                preloader.onerror = function () {
+                    image.src = fullSrc;
+                    image.dataset.loaded = "true";
+                };
+            };
+
+            if ("IntersectionObserver" in window) {
+                const progressiveObserver = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        loadProgressiveImage(entry.target);
+                        observer.unobserve(entry.target);
+                    });
+                }, { rootMargin: "200px 0px" });
+
+                progressiveImages.forEach(function (image) {
+                    progressiveObserver.observe(image);
+                });
+            } else {
+                progressiveImages.forEach(loadProgressiveImage);
+            }
         });
     </script>
-    <script src="/js/forms.js"></script>
 </body>
 </html>

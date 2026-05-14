@@ -172,8 +172,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </noscript>
     
     <style>
         * {
@@ -864,6 +868,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="/assets/css/article-theme.css">
 </head>
 <body>
     <header class="header">
@@ -930,11 +935,11 @@
 
             <div class="ba-grid">
                 <div class="ba-item">
-                    <img class="ba-image" src="/assets/images/before/top_before.png" alt="Потолок автомобиля до перешива" onerror="this.src='https://via.placeholder.com/600x400/2a2a2a/d4a13e?text=ДО'">
+                    <img class="ba-image" src="/assets/images/optimized/before/top_before-480.jpg" srcset="/assets/images/optimized/before/top_before-480.jpg 480w, /assets/images/optimized/before/top_before-960.jpg 960w, /assets/images/before/top_before.png 1448w" sizes="(max-width: 768px) 100vw, 50vw" width="1448" height="1086" loading="lazy" decoding="async" alt="Потолок автомобиля до перешива" onerror="this.src='https://via.placeholder.com/600x400/2a2a2a/d4a13e?text=ДО'">
                     <div class="ba-label do">ДО</div>
                 </div>
                 <div class="ba-item">
-                    <img class="ba-image" src="/assets/images/after/top_after.png" alt="Потолок автомобиля после перешива" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/d4a13e?text=ПОСЛЕ'">
+                    <img class="ba-image" src="/assets/images/optimized/after/top_after-480.jpg" srcset="/assets/images/optimized/after/top_after-480.jpg 480w, /assets/images/optimized/after/top_after-960.jpg 960w, /assets/images/after/top_after.png 1448w" sizes="(max-width: 768px) 100vw, 50vw" width="1448" height="1086" loading="lazy" decoding="async" alt="Потолок автомобиля после перешива" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/d4a13e?text=ПОСЛЕ'">
                     <div class="ba-label posle">ПОСЛЕ</div>
                 </div>
             </div>
