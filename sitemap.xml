@@ -44,6 +44,42 @@
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://luxautospa.ru/lokalnaya-pokraska-avto-moskva/</loc>
+        <lastmod>2026-07-08T12:00:00+03:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/gallery/4.png</image:loc>
+            <image:title>Локальная покраска авто в Москве</image:title>
+            <image:caption>Локальная покраска бампера, крыла и ремонт ЛКП</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/himchistka-salona-avtomobilya-moskva/</loc>
+        <lastmod>2026-07-08T12:00:00+03:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/after/top_after.png</image:loc>
+            <image:title>Химчистка салона автомобиля в Москве</image:title>
+            <image:caption>Химчистка сидений, потолка, багажника и полная химчистка салона</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/polirovka-avtomobilya-moskva/</loc>
+        <lastmod>2026-07-08T12:00:00+03:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/after/polirovka.png</image:loc>
+            <image:title>Полировка автомобиля в Москве</image:title>
+            <image:caption>Полировка кузова, царапин и восстановление блеска автомобиля</image:caption>
+        </image:image>
+    </url>
+
     <!-- Страницы услуг -->
     <!-- <url>
         <loc>https://luxautospa.ru/services/polishing/</loc>
