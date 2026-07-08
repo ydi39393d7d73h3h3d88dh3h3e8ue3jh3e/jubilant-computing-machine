@@ -192,6 +192,18 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://luxautospa.ru/articles/interior-cleaning-odor-removal/</loc>
+        <lastmod>2026-07-08T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/after/top_after.png</image:loc>
+            <image:title>Химчистка салона и удаление запаха</image:title>
+            <image:caption>Химчистка салона автомобиля, потолка и сидений с удалением запаха</image:caption>
+        </image:image>
+    </url>
+
     <!-- Галерея
     <url>
         <loc>https://luxautospa.ru/gallery/</loc>
