@@ -204,6 +204,18 @@
         </image:image>
     </url>
 
+    <url>
+        <loc>https://luxautospa.ru/articles/lokalnaya-pokraska-avto-moskva/</loc>
+        <lastmod>2026-07-08T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/gallery/4.png</image:loc>
+            <image:title>Локальная покраска авто в Москве</image:title>
+            <image:caption>Локальная покраска, кузовной ремонт и подбор цвета автомобиля</image:caption>
+        </image:image>
+    </url>
+
     <!-- Галерея
     <url>
         <loc>https://luxautospa.ru/gallery/</loc>
