@@ -216,6 +216,18 @@
         </image:image>
     </url>
 
+    <url>
+        <loc>https://luxautospa.ru/articles/polirovka-avtomobilya-moskva/</loc>
+        <lastmod>2026-07-08T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/after/polirovka.png</image:loc>
+            <image:title>Полировка автомобиля в Москве</image:title>
+            <image:caption>Полировка автомобиля, удаление царапин и оценка ремонта по фото</image:caption>
+        </image:image>
+    </url>
+
     <!-- Галерея
     <url>
         <loc>https://luxautospa.ru/gallery/</loc>
