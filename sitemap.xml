@@ -228,6 +228,102 @@
         </image:image>
     </url>
 
+    <url>
+        <loc>https://luxautospa.ru/articles/kak-ubrat-carapinu-na-bampere-avtomobilya/</loc>
+        <lastmod>2026-07-09T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/gallery/1.png</image:loc>
+            <image:title>Как убрать царапину на бампере автомобиля</image:title>
+            <image:caption>Локальный ремонт и покраска бампера автомобиля</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/kogda-nuzhna-lokalnaya-pokraska-avto-a-kogda-dostatochno-polirovki/</loc>
+        <lastmod>2026-07-09T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/after/polirovka.png</image:loc>
+            <image:title>Когда нужна локальная покраска авто</image:title>
+            <image:caption>Сравнение локальной покраски и полировки автомобиля</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/skolko-stoit-pokrasit-bamper-v-moskve/</loc>
+        <lastmod>2026-07-09T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/gallery/4.png</image:loc>
+            <image:title>Сколько стоит покрасить бампер в Москве</image:title>
+            <image:caption>Стоимость покраски бампера и локального ремонта в Москве</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/chto-delat-esli-pocarapali-mashinu-vo-dvore/</loc>
+        <lastmod>2026-07-09T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/gallery/1.png</image:loc>
+            <image:title>Что делать, если поцарапали машину во дворе</image:title>
+            <image:caption>Порядок действий после дворового повреждения автомобиля</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/lokalnaya-pokraska-ili-polnaya-pokraska-detali-chto-vybrat/</loc>
+        <lastmod>2026-07-09T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/gallery/4.png</image:loc>
+            <image:title>Локальная покраска или полная покраска детали</image:title>
+            <image:caption>Как выбрать между локальным и полным окрасом детали</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/kak-ubrat-skoly-na-kuzove-avtomobilya/</loc>
+        <lastmod>2026-07-09T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/gallery/1.png</image:loc>
+            <image:title>Как убрать сколы на кузове автомобиля</image:title>
+            <image:caption>Локальное восстановление сколов на кузове автомобиля</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/mozhno-li-ubrat-carapiny-bez-pokraski/</loc>
+        <lastmod>2026-07-09T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/after/polirovka.png</image:loc>
+            <image:title>Можно ли убрать царапины без покраски</image:title>
+            <image:caption>Когда царапины на автомобиле можно убрать без покраски</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/kak-podgotovit-avtomobil-k-lokalnoy-pokraske/</loc>
+        <lastmod>2026-07-09T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/gallery/4.png</image:loc>
+            <image:title>Как подготовить автомобиль к локальной покраске</image:title>
+            <image:caption>Подготовка автомобиля к локальной покраске и оценке по фото</image:caption>
+        </image:image>
+    </url>
+
     <!-- Галерея
     <url>
         <loc>https://luxautospa.ru/gallery/</loc>
