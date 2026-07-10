@@ -399,6 +399,66 @@
 
     <!-- Политика конфиденциальности -->
     <url>
+        <loc>https://luxautospa.ru/articles/kogda-nuzhna-polirovka-avtomobilya-i-kakoy-rezultat-ona-daet/</loc>
+        <lastmod>2026-07-10T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/after/polirovka.png</image:loc>
+            <image:title>РљРѕРіРґР° РЅСѓР¶РЅР° РїРѕР»РёСЂРѕРІРєР° Р°РІС‚РѕРјРѕР±РёР»СЏ</image:title>
+            <image:caption>РљРѕРіРґР° РїРѕР»РёСЂРѕРІРєР° Р°РІС‚Рѕ РґР°РµС‚ Р·Р°РјРµС‚РЅС‹Р№ СЂРµР·СѓР»СЊС‚Р°С‚</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/vosstanovitelnaya-polirovka-kuzova-chem-otlichaetsya-ot-obychnoy/</loc>
+        <lastmod>2026-07-10T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/after/polirovka.png</image:loc>
+            <image:title>Р’РѕСЃСЃС‚Р°РЅРѕРІРёС‚РµР»СЊРЅР°СЏ РїРѕР»РёСЂРѕРІРєР° РєСѓР·РѕРІР°</image:title>
+            <image:caption>Р§РµРј РѕС‚Р»РёС‡Р°РµС‚СЃСЏ РІРѕСЃСЃС‚Р°РЅРѕРІРёС‚РµР»СЊРЅР°СЏ РїРѕР»РёСЂРѕРІРєР° РєСѓР·РѕРІР° РѕС‚ РѕР±С‹С‡РЅРѕР№</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/mozhno-li-ubrat-carapiny-na-kuzove-polirovkoy/</loc>
+        <lastmod>2026-07-10T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/after/polirovka.png</image:loc>
+            <image:title>РњРѕР¶РЅРѕ Р»Рё СѓР±СЂР°С‚СЊ С†Р°СЂР°РїРёРЅС‹ РЅР° РєСѓР·РѕРІРµ РїРѕР»РёСЂРѕРІРєРѕР№</image:title>
+            <image:caption>РЈРґР°Р»РµРЅРёРµ С†Р°СЂР°РїРёРЅ РїРѕР»РёСЂРѕРІРєРѕР№ РЅР° Р°РІС‚РѕРјРѕР±РёР»Рµ</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/polirovka-avtomobilya-posle-zimy-zachem-delat-vesnoy/</loc>
+        <lastmod>2026-07-10T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/after/polirovka.png</image:loc>
+            <image:title>РџРѕР»РёСЂРѕРІРєР° Р°РІС‚РѕРјРѕР±РёР»СЏ РїРѕСЃР»Рµ Р·РёРјС‹</image:title>
+            <image:caption>РџРѕР»РёСЂРѕРІРєР° РєСѓР·РѕРІР° РїРѕСЃР»Рµ СЂРµР°РіРµРЅС‚РѕРІ Рё Р·РёРјРЅРµР№ СЌРєСЃРїР»СѓР°С‚Р°С†РёРё</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://luxautospa.ru/articles/polirovka-avtomobilya-pered-prodazhey-kak-uluchshit-vneshniy-vid-mashiny/</loc>
+        <lastmod>2026-07-10T12:00:00+03:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://luxautospa.ru/assets/images/after/polirovka.png</image:loc>
+            <image:title>РџРѕР»РёСЂРѕРІРєР° Р°РІС‚Рѕ РїРµСЂРµРґ РїСЂРѕРґР°Р¶РµР№</image:title>
+            <image:caption>РџРѕРґРіРѕС‚РѕРІРєР° Р°РІС‚Рѕ Рє РїСЂРѕРґР°Р¶Рµ СЃ РїРѕР»РёСЂРѕРІРєРѕР№</image:caption>
+        </image:image>
+    </url>
+
+    <url>
         <loc>https://luxautospa.ru/privacy-policy/</loc>
         <lastmod>2026-01-01T10:30:00+03:00</lastmod>
         <changefreq>yearly</changefreq>
