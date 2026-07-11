@@ -83,13 +83,39 @@
                             </div>
                         </div>
                         <div class="hero-media">
-                            <figure>
-                                <img class="progressive-image" src="/assets/images/after/top_after.png" alt="Потолок автомобиля после химчистки" loading="eager" decoding="async">
-                                <figcaption class="figure-caption">Сценарий, который хорошо продаёт услугу: присылаете фото салона, мы быстро понимаем объём работ и говорим ориентир.</figcaption>
-                            </figure>
-                            <figure>
-                                <img class="progressive-image" src="/assets/images/gallery/3.png" alt="Интерьер автомобиля после детейлинга" loading="lazy" decoding="async">
-                            </figure>
+                            <div class="service-stage" data-scene="clean" aria-label="Анимированная сцена химчистки салона">
+                                <div class="stage-grid"></div>
+                                <div class="stage-kpis">
+                                    <span class="stage-kpi"><strong>Фото</strong> салона до визита</span>
+                                    <span class="stage-kpi"><strong>Зоны</strong> по сценарию</span>
+                                </div>
+                                <div class="stage-deck">
+                                    <div class="stage-card stage-card-main">
+                                        <img src="/assets/images/stock/interior-truck.png" alt="Чистый салон автомобиля" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="stage-card stage-card-float">
+                                        <img src="/assets/images/after/top_after.png" alt="Потолок после химчистки" loading="lazy" decoding="async">
+                                    </div>
+                                </div>
+                                <div class="stage-accent"></div>
+                                <div class="scene-chips">
+                                    <span class="scene-chip">Сиденья</span>
+                                    <span class="scene-chip">Потолок</span>
+                                    <span class="scene-chip">Удаление запахов</span>
+                                </div>
+                            </div>
+                            <div class="hero-proof">
+                                <article class="proof-card">
+                                    <img class="progressive-image" src="/assets/images/stock/interior-truck.png" alt="Салон автомобиля после химчистки" loading="eager" decoding="async">
+                                    <h3>Чистый салон</h3>
+                                    <p>Сценарий продаж здесь очень бытовой: сиденья, пол, потолок, запах и общее ощущение свежести.</p>
+                                </article>
+                                <article class="proof-card">
+                                    <img class="progressive-image" src="/assets/images/after/top_after.png" alt="Потолок после глубокой химчистки" loading="lazy" decoding="async">
+                                    <h3>Работа по зонам</h3>
+                                    <p>Когда потолок, сиденья или багажник можно показать отдельно, страница продаёт услугу заметно лучше.</p>
+                                </article>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -267,5 +293,6 @@
     </div>
 
     <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    <script type="module" src="/assets/js/service-motion.js"></script>
 </body>
 </html>

@@ -64,6 +64,20 @@ input {
     transition: opacity 0.35s ease;
 }
 
+body.js-ready .reveal-target {
+    opacity: 0;
+    transform: translateY(26px) scale(0.985);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+body.js-ready .reveal-target.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
 .site-header {
     position: sticky;
     top: 0;
@@ -157,7 +171,7 @@ input {
 .panel,
 .cta-panel {
     border-radius: 40px;
-    padding: 34px;
+    padding: 28px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background:
         linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)),
@@ -166,15 +180,15 @@ input {
 }
 
 .hero {
-    padding: 34px 0 42px;
+    padding: 24px 0 28px;
 }
 
 .hero-grid,
 .two-col {
     display: grid;
-    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-    gap: 24px;
-    align-items: start;
+    grid-template-columns: minmax(0, 1fr) minmax(460px, 0.9fr);
+    gap: 20px;
+    align-items: center;
 }
 
 .eyebrow {
@@ -194,7 +208,7 @@ input {
 .cta-copy h2 {
     margin-top: 18px;
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(3rem, 7vw, 5.4rem);
+    font-size: clamp(2.8rem, 5.8vw, 4.9rem);
     line-height: 0.9;
     letter-spacing: -0.045em;
 }
@@ -256,6 +270,212 @@ input {
 .gallery-card img {
     border-radius: 28px;
     overflow: hidden;
+}
+
+.hero-media {
+    display: grid;
+    gap: 12px;
+}
+
+.service-stage {
+    position: relative;
+    min-height: 298px;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        radial-gradient(circle at 16% 18%, rgba(214, 166, 95, 0.22), transparent 28%),
+        radial-gradient(circle at 86% 12%, rgba(255, 255, 255, 0.09), transparent 24%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(8, 9, 12, 0.18)),
+        #111317;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.service-stage::before {
+    content: "";
+    position: absolute;
+    inset: -30% auto auto -10%;
+    width: 48%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 68%);
+    filter: blur(12px);
+    pointer-events: none;
+}
+
+.service-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(115deg, transparent 0%, transparent 34%, rgba(255, 255, 255, 0.15) 49%, transparent 62%, transparent 100%);
+    transform: translateX(-120%);
+    animation: stage-shine 6.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.scene-chips {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.scene-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 0 14px;
+    border-radius: 999px;
+    background: rgba(9, 10, 13, 0.68);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    color: var(--text);
+    font-size: 0.85rem;
+    backdrop-filter: blur(16px);
+}
+
+.stage-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 34px 34px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 78%);
+    opacity: 0.45;
+}
+
+.stage-deck {
+    position: absolute;
+    inset: 22px 22px 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1400px;
+}
+
+.stage-card {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.34);
+    transform-style: preserve-3d;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.stage-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stage-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 40%, rgba(0, 0, 0, 0.2));
+    pointer-events: none;
+}
+
+.stage-card-main {
+    inset: 26px 88px 18px 30px;
+    transform: rotate(-6deg);
+}
+
+.stage-card-float {
+    width: 38%;
+    aspect-ratio: 0.88;
+    right: 10px;
+    top: 6px;
+    transform: rotate(7deg) translateZ(30px);
+}
+
+.stage-kpis {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 1;
+    display: grid;
+    gap: 8px;
+}
+
+.stage-kpi {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 34px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: rgba(9, 10, 13, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(12px);
+    font-size: 0.83rem;
+}
+
+.stage-kpi strong {
+    color: var(--gold-strong);
+}
+
+.stage-accent {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 90px;
+    background:
+        radial-gradient(circle at 50% 100%, rgba(214, 166, 95, 0.12), transparent 56%),
+        linear-gradient(180deg, rgba(8, 9, 12, 0), rgba(8, 9, 12, 0.62));
+}
+
+.hero-proof {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 12px;
+}
+
+.proof-card {
+    padding: 12px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.proof-card img {
+    aspect-ratio: 1.38;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.proof-card h3 {
+    margin-top: 12px;
+    font-size: 1rem;
+}
+
+.proof-card p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+@keyframes stage-shine {
+    0%, 100% {
+        transform: translateX(-120%);
+        opacity: 0;
+    }
+    18% {
+        opacity: 0;
+    }
+    42% {
+        transform: translateX(140%);
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
 }
 
 .hero-media figure + figure,
@@ -482,6 +702,10 @@ input {
     .hero-points {
         grid-template-columns: 1fr;
     }
+
+    .hero-proof {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 720px) {
@@ -495,6 +719,34 @@ input {
     .gallery-grid,
     .gallery-pair {
         grid-template-columns: 1fr;
+    }
+
+    .service-stage {
+        min-height: 244px;
+    }
+
+    .stage-deck {
+        inset: 18px 18px 70px;
+    }
+
+    .stage-card-main {
+        inset: 22px 72px 8px 12px;
+    }
+
+    .stage-card-float {
+        width: 42%;
+        right: 0;
+        top: 0;
+    }
+
+    .scene-chips {
+        right: 16px;
+    }
+
+    .scene-chip {
+        min-height: 32px;
+        padding: 0 12px;
+        font-size: 0.79rem;
     }
 
     .site-header .container {

@@ -83,13 +83,39 @@
                             </div>
                         </div>
                         <div class="hero-media">
-                            <figure>
-                                <img class="progressive-image" src="/assets/images/after/polirovka.png" alt="Автомобиль после полировки кузова" loading="eager" decoding="async">
-                                <figcaption class="figure-caption">Сильнее всего полировку продают живые фото: глубина цвета, отражение и чистый блеск кузова видны сразу.</figcaption>
-                            </figure>
-                            <figure>
-                                <img class="progressive-image" src="/assets/images/gallery/1.png" alt="Автомобиль в детейлинг-студии" loading="lazy" decoding="async">
-                            </figure>
+                            <div class="service-stage" data-scene="polish" aria-label="Анимированная сцена полировки кузова">
+                                <div class="stage-grid"></div>
+                                <div class="stage-kpis">
+                                    <span class="stage-kpi"><strong>Блеск</strong> как продукт</span>
+                                    <span class="stage-kpi"><strong>До/после</strong> в лоб</span>
+                                </div>
+                                <div class="stage-deck">
+                                    <div class="stage-card stage-card-main">
+                                        <img src="/assets/images/after/polirovka.png" alt="Автомобиль после полировки кузова" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="stage-card stage-card-float">
+                                        <img src="/assets/images/stock/tesla-detailing.png" alt="Автомобиль после детейлинг-подготовки" loading="lazy" decoding="async">
+                                    </div>
+                                </div>
+                                <div class="stage-accent"></div>
+                                <div class="scene-chips">
+                                    <span class="scene-chip">Глянец</span>
+                                    <span class="scene-chip">Глубина цвета</span>
+                                    <span class="scene-chip">Удаление мелкой риски</span>
+                                </div>
+                            </div>
+                            <div class="hero-proof">
+                                <article class="proof-card">
+                                    <img class="progressive-image" src="/assets/images/after/polirovka.png" alt="Кузов автомобиля после полировки" loading="eager" decoding="async">
+                                    <h3>Вид после полировки</h3>
+                                    <p>На этой услуге лучше всего работает наглядность: отражение, глубина цвета и чистый глянец.</p>
+                                </article>
+                                <article class="proof-card">
+                                    <img class="progressive-image" src="/assets/images/stock/tesla-detailing.png" alt="Автомобиль после детейлинг-подготовки" loading="lazy" decoding="async">
+                                    <h3>Контроль под светом</h3>
+                                    <p>Важна не только паста, но и то, как кузов читается под правильным светом ещё в процессе.</p>
+                                </article>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -274,5 +300,6 @@
     </div>
 
     <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    <script type="module" src="/assets/js/service-motion.js"></script>
 </body>
 </html>
